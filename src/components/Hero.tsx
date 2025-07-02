@@ -9,14 +9,15 @@ export const Hero = () => {
         <div className="animate-fade-in">
           <h1 className="text-4xl sm:text-6xl font-bold mb-6">
             Hi, I'm{" "}
-            <span className="text-primary">Your Name</span>
+            <span className="text-primary">Ankita Parit</span>
           </h1>
           <p className="text-xl sm:text-2xl text-muted-foreground mb-8">
-            Full Stack Developer & UI/UX Designer
+            Senior Project Specialist & Data Analytics Expert
           </p>
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            I create beautiful, functional, and user-centered digital experiences.
-            Passionate about turning ideas into reality through code.
+            Accomplished project management professional with 6+ years of experience delivering 
+            complex projects from inception to closure. Expert in data visualization, stakeholder 
+            engagement, and driving operational efficiency across diverse industries.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

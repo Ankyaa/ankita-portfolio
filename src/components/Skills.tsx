@@ -4,16 +4,16 @@ import { Badge } from "@/components/ui/badge";
 export const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
-      skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "HTML/CSS", "JavaScript"]
+      title: "Project Management",
+      skills: ["Agile Methodologies", "Scrum", "KANBAN", "Waterfall", "JIRA", "Trello", "Resource Planning", "Risk Assessment"]
     },
     {
-      title: "Backend",
-      skills: ["Node.js", "Python", "Express", "PostgreSQL", "MongoDB", "REST APIs"]
+      title: "Data & Analytics",
+      skills: ["Power BI", "Tableau", "Python", "SQL", "R", "Business Analytics", "Data Visualization", "Data Science & ML"]
     },
     {
-      title: "Tools & Others",
-      skills: ["Git", "Docker", "AWS", "Figma", "VS Code", "Linux"]
+      title: "Technical & Tools",
+      skills: ["SharePoint", "Smartsheet", "Excel", "CMS", "HTML", "CSS", "XML", "Content Authoring", "Quality Assurance"]
     }
   ];
 
@@ -21,9 +21,9 @@ export const Skills = () => {
     <section id="skills" className="py-20">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Skills & Technologies</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Skills & Expertise</h2>
           <p className="text-lg text-muted-foreground">
-            Technologies I work with to bring ideas to life
+            Comprehensive skill set spanning project management, data analytics, and technical implementation
           </p>
         </div>
 

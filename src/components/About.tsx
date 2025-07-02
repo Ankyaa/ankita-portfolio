@@ -1,23 +1,23 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Code, Palette, Zap } from "lucide-react";
+import { Target, Users, BarChart3 } from "lucide-react";
 
 export const About = () => {
   const features = [
     {
-      icon: Code,
-      title: "Clean Code",
-      description: "Writing maintainable, scalable code following best practices"
+      icon: Target,
+      title: "Project Excellence",
+      description: "Delivering high-quality projects within scope, budget, and schedule with 6+ years of experience"
     },
     {
-      icon: Palette,
-      title: "Creative Design",
-      description: "Crafting beautiful user interfaces with attention to detail"
+      icon: Users,
+      title: "Cross-functional Leadership",
+      description: "Leading diverse teams across multiple time zones while ensuring effective stakeholder engagement"
     },
     {
-      icon: Zap,
-      title: "Performance",
-      description: "Building fast, optimized applications for the best user experience"
+      icon: BarChart3,
+      title: "Data-Driven Insights",
+      description: "Creating impactful data visualizations and dashboards using PowerBI and Tableau for business analysis"
     }
   ];
 
@@ -27,31 +27,32 @@ export const About = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm a passionate developer with 3+ years of experience creating 
-            digital solutions that make a difference.
+            Senior Project Specialist with expertise in managing complex projects and 
+            driving organizational success through data-driven decision making.
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
           <div>
             <p className="text-lg mb-6">
-              Hello! I'm a full-stack developer based in [Your Location]. I enjoy 
-              creating things that live on the internet, whether that be websites, 
-              applications, or anything in between.
+              I'm an accomplished Senior Project Specialist based in Thane, India, with over 6 years 
+              of experience managing complex projects from initiation to closure. I specialize in 
+              resource planning, effort estimation, and process optimization to enhance operational efficiency.
             </p>
             <p className="text-lg mb-6">
-              My goal is to always build products that provide pixel-perfect, 
-              performant experiences. I work with modern technologies and love 
-              learning new ones.
+              My expertise spans across project management, data visualization, and stakeholder engagement. 
+              I've successfully managed projects for key clients including Salesforce, Coca-Cola, 
+              Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
+              with organizational objectives.
             </p>
             <p className="text-lg">
-              When I'm not coding, you can find me exploring new technologies, 
-              contributing to open source, or enjoying the outdoors.
+              I hold certifications in Business Analytics and Data Science with AI/ML, and I'm passionate 
+              about leveraging data-driven insights to drive continuous improvement and business growth.
             </p>
           </div>
           <div className="flex justify-center">
             <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
-              <span className="text-6xl">👨‍💻</span>
+              <span className="text-6xl">👩‍💼</span>
             </div>
           </div>
         </div>

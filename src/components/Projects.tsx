@@ -1,33 +1,51 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink, BarChart3 } from "lucide-react";
 
 export const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "A full-stack e-commerce solution with React, Node.js, and Stripe integration",
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "#",
-      demo: "#"
+      title: "Enterprise Data Visualization Dashboard",
+      description: "Created comprehensive PowerBI and Tableau dashboards for real-time user data analysis and business insights",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
+      technologies: ["Power BI", "Tableau", "Business Analytics", "Data Visualization"],
+      clients: "Multiple Enterprise Clients"
     },
     {
-      title: "Task Management App",
-      description: "A collaborative task management tool with real-time updates and team features",
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=400&h=300&fit=crop",
-      technologies: ["Next.js", "PostgreSQL", "Socket.io", "Tailwind"],
-      github: "#",
-      demo: "#"
+      title: "Salesforce Project Management Suite",
+      description: "Led end-to-end project development for Salesforce platform configuration and content authoring solutions",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
+      technologies: ["Salesforce", "Project Management", "Agile", "Stakeholder Management"],
+      clients: "Salesforce, Accenture"
     },
     {
-      title: "Weather Dashboard",
-      description: "A beautiful weather dashboard with location-based forecasts and charts",
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400&h=300&fit=crop",
-      technologies: ["React", "TypeScript", "Chart.js", "Weather API"],
-      github: "#",
-      demo: "#"
+      title: "Medical Terminology E-Learning Platform",
+      description: "Developed interactive HTML-based e-learning solutions and simulation tools for medical education",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+      technologies: ["HTML", "CSS", "XML", "E-Learning", "Content Development"],
+      clients: "Medical Education Sector"
+    },
+    {
+      title: "Multi-Client Platform Solutions",
+      description: "Managed complex projects for Fortune 500 companies including process optimization and quality assurance",
+      image: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&h=300&fit=crop",
+      technologies: ["JIRA", "Process Optimization", "Quality Assurance", "Cross-functional Leadership"],
+      clients: "Coca-Cola, Mondelez, Abbott, Merck"
+    },
+    {
+      title: "Cengage Learning Content Management",
+      description: "Led content authoring and platform configuration projects for educational technology solutions",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
+      technologies: ["CMS", "Content Strategy", "Platform Configuration", "Educational Technology"],
+      clients: "Cengage SAM, Walch, VHL"
+    },
+    {
+      title: "Microsoft Office Simulation Suite",
+      description: "Developed comprehensive simulations for Microsoft Office tools using XML coding and best practices",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
+      technologies: ["XML", "Microsoft Office", "Simulation Development", "Code Review"],
+      clients: "Corporate Training Sector"
     }
   ];
 
@@ -37,7 +55,7 @@ export const Projects = () => {
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
           <p className="text-lg text-muted-foreground">
-            Some of my recent work that I'm proud to share
+            Key projects delivered for Fortune 500 companies and enterprise clients
           </p>
         </div>
 
@@ -52,8 +70,9 @@ export const Projects = () => {
                 />
               </div>
               <CardHeader>
-                <CardTitle>{project.title}</CardTitle>
+                <CardTitle className="text-lg">{project.title}</CardTitle>
                 <CardDescription>{project.description}</CardDescription>
+                <p className="text-sm text-primary font-medium">Clients: {project.clients}</p>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2 mb-4">
@@ -67,13 +86,9 @@ export const Projects = () => {
                   ))}
                 </div>
                 <div className="flex gap-2">
-                  <Button variant="outline" size="sm" className="flex-1">
-                    <Github className="h-4 w-4 mr-2" />
-                    Code
-                  </Button>
                   <Button size="sm" className="flex-1">
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    Demo
+                    <BarChart3 className="h-4 w-4 mr-2" />
+                    View Details
                   </Button>
                 </div>
               </CardContent>
