@@ -50,50 +50,60 @@ export const Projects = () => {
   ];
 
   return (
-    <section id="projects" className="py-20 bg-muted/30">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
-          <p className="text-lg text-muted-foreground">
-            Key projects delivered for Fortune 500 companies and enterprise clients
-          </p>
-        </div>
+    <section id="projects" className="py-20 relative">
+      {/* Background Wallpaper */}
+      <div 
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        style={{
+          backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
+        }}
+      ></div>
+      
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
+            <p className="text-lg text-muted-foreground">
+              Key projects delivered for Fortune 500 companies and enterprise clients
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card key={index} className="hover-scale overflow-hidden">
-              <div className="aspect-video overflow-hidden">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                />
-              </div>
-              <CardHeader>
-                <CardTitle className="text-lg">{project.title}</CardTitle>
-                <CardDescription>{project.description}</CardDescription>
-                <p className="text-sm text-primary font-medium">Clients: {project.clients}</p>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech, techIndex) => (
-                    <span 
-                      key={techIndex}
-                      className="px-2 py-1 bg-primary/10 text-primary text-xs rounded"
-                    >
-                      {tech}
-                    </span>
-                  ))}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <Card key={index} className="hover-scale overflow-hidden">
+                <div className="aspect-video overflow-hidden">
+                  <img 
+                    src={project.image} 
+                    alt={project.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <div className="flex gap-2">
-                  <Button size="sm" className="flex-1">
-                    <BarChart3 className="h-4 w-4 mr-2" />
-                    View Details
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+                <CardHeader>
+                  <CardTitle className="text-lg">{project.title}</CardTitle>
+                  <CardDescription>{project.description}</CardDescription>
+                  <p className="text-sm text-primary font-medium">Clients: {project.clients}</p>
+                </CardHeader>
+                <CardContent>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech, techIndex) => (
+                      <span 
+                        key={techIndex}
+                        className="px-2 py-1 bg-primary/10 text-primary text-xs rounded"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+                  <div className="flex gap-2">
+                    <Button size="sm" className="flex-1">
+                      <BarChart3 className="h-4 w-4 mr-2" />
+                      View Details
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
