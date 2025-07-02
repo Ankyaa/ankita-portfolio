@@ -1,8 +1,27 @@
 
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export const Hero = () => {
+  const [showScrollButton, setShowScrollButton] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        const rect = contactSection.getBoundingClientRect();
+        const isContactVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+        setShowScrollButton(!isContactVisible);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check initially
+
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const scrollToNext = () => {
     const aboutSection = document.querySelector('#about');
     aboutSection?.scrollIntoView({ behavior: "smooth" });
@@ -75,16 +94,18 @@ export const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator - positioned at bottom right */}
-      <div className="fixed bottom-6 right-6 z-50 animate-bounce">
-        <button
-          onClick={scrollToNext}
-          className="flex flex-col items-center text-primary hover:text-primary/80 transition-colors bg-white/80 backdrop-blur-sm rounded-full p-3 shadow-lg"
-        >
-          <span className="text-xs mb-1">Scroll</span>
-          <ChevronDown className="h-4 w-4" />
-        </button>
-      </div>
+      {/* Scroll Indicator - positioned at bottom right, hidden on contact page */}
+      {showScrollButton && (
+        <div className="fixed bottom-4 right-4 z-50 animate-bounce">
+          <button
+            onClick={scrollToNext}
+            className="flex flex-col items-center text-primary hover:text-primary/80 transition-colors bg-white/80 backdrop-blur-sm rounded-full p-2 shadow-lg"
+          >
+            <span className="text-xs mb-1">Scroll</span>
+            <ChevronDown className="h-3 w-3" />
+          </button>
+        </div>
+      )}
     </section>
   );
 };

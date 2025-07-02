@@ -41,32 +41,33 @@ export const About = () => {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
-            <div>
-              <p className="text-lg mb-6">
+          <div className="mb-16">
+            <div className="text-center mb-8">
+              <div className="w-32 h-32 bg-gradient-to-br from-primary/20 via-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-xl mx-auto mb-6">
+                <span className="text-5xl">👩‍💼</span>
+              </div>
+            </div>
+            
+            <div className="max-w-4xl mx-auto text-center space-y-6">
+              <p className="text-lg">
                 I'm an accomplished Senior Project Specialist based in Thane, India, with over 6 years 
                 of experience managing complex projects from initiation to closure. I specialize in 
                 resource planning, effort estimation, and process optimization to enhance operational efficiency.
               </p>
-              <p className="text-lg mb-6">
+              <p className="text-lg">
                 My expertise spans across project management, data visualization, and stakeholder engagement. 
                 I've successfully managed projects for key clients including Salesforce, Coca-Cola, 
                 Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
                 with organizational objectives.
               </p>
-              <p className="text-lg mb-6">
+              <p className="text-lg">
                 I hold certifications in Business Analytics and Data Science with AI/ML, and I'm passionate 
                 about leveraging data-driven insights to drive continuous improvement and business growth.
               </p>
-              <div className="bg-gradient-to-r from-primary/10 to-blue-100 p-4 rounded-lg">
+              <div className="bg-gradient-to-r from-primary/10 to-blue-100 p-4 rounded-lg max-w-2xl mx-auto">
                 <p className="text-lg font-medium text-primary">
                   🚀 Currently exploring AI applications in project management and business analytics
                 </p>
-              </div>
-            </div>
-            <div className="flex justify-center">
-              <div className="w-48 h-48 bg-gradient-to-br from-primary/20 via-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-xl">
-                <span className="text-4xl">👩‍💼</span>
               </div>
             </div>
           </div>
