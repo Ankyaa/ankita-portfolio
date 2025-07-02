@@ -22,7 +22,7 @@ export const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-muted/30">
+    <section id="about" className="py-20 bg-gradient-to-b from-white to-gray-50 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold mb-4">About Me</h2>
@@ -45,13 +45,18 @@ export const About = () => {
               Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
               with organizational objectives.
             </p>
-            <p className="text-lg">
+            <p className="text-lg mb-6">
               I hold certifications in Business Analytics and Data Science with AI/ML, and I'm passionate 
               about leveraging data-driven insights to drive continuous improvement and business growth.
             </p>
+            <div className="bg-gradient-to-r from-primary/10 to-blue-100 p-4 rounded-lg">
+              <p className="text-lg font-medium text-primary">
+                🚀 Currently exploring AI applications in project management and business analytics
+              </p>
+            </div>
           </div>
           <div className="flex justify-center">
-            <div className="w-80 h-80 bg-gradient-to-br from-primary/20 to-secondary/20 rounded-full flex items-center justify-center">
+            <div className="w-80 h-80 bg-gradient-to-br from-primary/20 via-blue-100 to-purple-100 rounded-full flex items-center justify-center shadow-xl">
               <span className="text-6xl">👩‍💼</span>
             </div>
           </div>
@@ -59,7 +64,7 @@ export const About = () => {
 
         <div className="grid md:grid-cols-3 gap-8">
           {features.map((feature, index) => (
-            <Card key={index} className="hover-scale">
+            <Card key={index} className="hover-scale border-0 shadow-lg bg-white/80 backdrop-blur-sm">
               <CardContent className="p-6 text-center">
                 <feature.icon className="h-12 w-12 mx-auto mb-4 text-primary" />
                 <h3 className="text-xl font-semibold mb-3">{feature.title}</h3>
