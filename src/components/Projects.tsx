@@ -22,7 +22,7 @@ export const Projects = () => {
     {
       title: "Medical Terminology E-Learning Platform",
       description: "Developed interactive HTML-based e-learning solutions and simulation tools for medical education",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=400&h=300&fit=crop",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
       technologies: ["HTML", "CSS", "XML", "E-Learning", "Content Development"],
       clients: "Medical Education Sector"
     },
