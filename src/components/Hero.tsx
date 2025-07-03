@@ -57,7 +57,7 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
-      {/* Professional Background */}
+      {/* Professional Technology Background */}
       <div className="absolute inset-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -65,11 +65,11 @@ export const Hero = () => {
             backgroundImage: `url("https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop")`
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-purple-900/80 to-indigo-900/90 backdrop-blur-sm"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/85 via-indigo-900/75 to-purple-900/80 backdrop-blur-sm"></div>
       </div>
       
-      {/* Animated overlay pattern */}
-      <div className="absolute inset-0 opacity-20" style={{
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
       }}></div>
       
@@ -77,7 +77,7 @@ export const Hero = () => {
         <div className="animate-fade-in">
           {/* Profile Photo */}
           <div className="mb-8 flex justify-center">
-            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl backdrop-blur-sm bg-white/10">
+            <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/20 shadow-2xl backdrop-blur-sm bg-white/5">
               <img 
                 src="/lovable-uploads/0f7a555b-f3bc-4d06-9ff7-997e4f06792a.png" 
                 alt="Ankita Parit"
@@ -88,12 +88,12 @@ export const Hero = () => {
 
           <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-white">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Ankita Parit</span>
+            <span className="bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">Ankita Parit</span>
           </h1>
           <p className="text-xl sm:text-2xl text-slate-200 mb-4">
             Senior Project Specialist & Data Analytics Expert
           </p>
-          <p className="text-lg text-emerald-400 font-medium mb-8">
+          <p className="text-lg text-blue-400 font-medium mb-8">
             🤖 Passionate about AI & Machine Learning
           </p>
           <p className="text-lg text-slate-300 mb-8 max-w-2xl mx-auto">
@@ -105,14 +105,14 @@ export const Hero = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <Button 
               size="lg" 
-              className="hover-scale bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border-0 shadow-lg"
+              className="hover-scale bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg"
               onClick={scrollToProjects}
             >
               View My Work
             </Button>
             <Button 
               size="lg" 
-              className="hover-scale bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border-0 shadow-lg"
+              className="hover-scale bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0 shadow-lg"
               onClick={downloadCV}
             >
               Download CV
@@ -123,7 +123,7 @@ export const Hero = () => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="hover-scale hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm"
+              className="hover-scale hover:bg-white/10 text-white border border-white/20 backdrop-blur-sm hover:scale-110 transition-all duration-300"
               onClick={openGitHub}
             >
               <Github className="h-6 w-6" />
@@ -131,7 +131,7 @@ export const Hero = () => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="hover-scale hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm"
+              className="hover-scale hover:bg-white/10 text-white border border-white/20 backdrop-blur-sm hover:scale-110 transition-all duration-300"
               onClick={openLinkedIn}
             >
               <Linkedin className="h-6 w-6" />
@@ -139,7 +139,7 @@ export const Hero = () => {
             <Button 
               variant="ghost" 
               size="icon" 
-              className="hover-scale hover:bg-white/20 text-white border border-white/30 backdrop-blur-sm"
+              className="hover-scale hover:bg-white/10 text-white border border-white/20 backdrop-blur-sm hover:scale-110 transition-all duration-300"
               onClick={openEmail}
             >
               <Mail className="h-6 w-6" />
@@ -153,7 +153,7 @@ export const Hero = () => {
         <div className="fixed bottom-4 right-4 z-50 animate-bounce">
           <button
             onClick={scrollToNext}
-            className="flex flex-col items-center text-white hover:text-emerald-400 transition-colors bg-black/30 backdrop-blur-sm rounded-full p-2 shadow-lg text-xs border border-white/20"
+            className="flex flex-col items-center text-white hover:text-blue-400 transition-colors bg-black/30 backdrop-blur-sm rounded-full p-2 shadow-lg text-xs border border-white/20"
           >
             <span className="mb-1">Scroll</span>
             <ChevronDown className="h-3 w-3" />

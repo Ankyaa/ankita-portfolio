@@ -34,7 +34,7 @@ export const About = () => {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-slate-800/60 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-slate-700/50">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-emerald-400 to-teal-400 bg-clip-text text-transparent">About Me</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">About Me</h2>
             <p className="text-lg text-slate-300 max-w-2xl mx-auto">
               Senior Project Specialist with expertise in managing complex projects and 
               driving organizational success through data-driven decision making.
@@ -43,7 +43,7 @@ export const About = () => {
 
           <div className="mb-16">
             <div className="text-center mb-8">
-              <div className="w-32 h-32 bg-gradient-to-br from-emerald-400/20 via-teal-400/20 to-cyan-400/20 rounded-full flex items-center justify-center shadow-xl mx-auto mb-6 border border-emerald-400/30">
+              <div className="w-32 h-32 bg-gradient-to-br from-blue-400/20 via-purple-400/20 to-pink-400/20 rounded-full flex items-center justify-center shadow-xl mx-auto mb-6 border border-blue-400/30">
                 <span className="text-5xl">👩‍💼</span>
               </div>
             </div>
@@ -64,8 +64,8 @@ export const About = () => {
                 I hold certifications in Business Analytics and Data Science with AI/ML, and I'm passionate 
                 about leveraging data-driven insights to drive continuous improvement and business growth.
               </p>
-              <div className="bg-gradient-to-r from-emerald-500/10 to-teal-500/10 p-4 rounded-lg max-w-2xl mx-auto border border-emerald-400/20">
-                <p className="text-lg font-medium text-emerald-400">
+              <div className="bg-gradient-to-r from-blue-500/10 to-purple-500/10 p-4 rounded-lg max-w-2xl mx-auto border border-blue-400/20">
+                <p className="text-lg font-medium text-blue-400">
                   🚀 Currently exploring AI applications in project management and business analytics
                 </p>
               </div>
@@ -76,7 +76,7 @@ export const About = () => {
             {features.map((feature, index) => (
               <Card key={index} className="hover-scale border-0 shadow-lg bg-slate-700/50 backdrop-blur-sm border border-slate-600/50">
                 <CardContent className="p-6 text-center">
-                  <feature.icon className="h-12 w-12 mx-auto mb-4 text-emerald-400" />
+                  <feature.icon className="h-12 w-12 mx-auto mb-4 text-blue-400" />
                   <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
                   <p className="text-slate-300">{feature.description}</p>
                 </CardContent>
