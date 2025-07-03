@@ -39,36 +39,6 @@ export type Database = {
         }
         Relationships: []
       }
-      "Portfolio data": {
-        Row: {
-          created_at: string
-          "Email ID": string | null
-          "First Name": string | null
-          id: number
-          "Last Name": string | null
-          Message: string | null
-          Subject: string | null
-        }
-        Insert: {
-          created_at?: string
-          "Email ID"?: string | null
-          "First Name"?: string | null
-          id?: number
-          "Last Name"?: string | null
-          Message?: string | null
-          Subject?: string | null
-        }
-        Update: {
-          created_at?: string
-          "Email ID"?: string | null
-          "First Name"?: string | null
-          id?: number
-          "Last Name"?: string | null
-          Message?: string | null
-          Subject?: string | null
-        }
-        Relationships: []
-      }
     }
     Views: {
       [_ in never]: never
