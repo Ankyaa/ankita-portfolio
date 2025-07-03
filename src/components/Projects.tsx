@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, BarChart3 } from "lucide-react";
+import { BarChart3 } from "lucide-react";
 import { useState } from "react";
 
 export const Projects = () => {
@@ -153,21 +153,6 @@ export const Projects = () => {
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        .perspective-1000 {
-          perspective: 1000px;
-        }
-        .transform-style-preserve-3d {
-          transform-style: preserve-3d;
-        }
-        .backface-hidden {
-          backface-visibility: hidden;
-        }
-        .rotate-y-180 {
-          transform: rotateY(180deg);
-        }
-      `}</style>
     </section>
   );
 };

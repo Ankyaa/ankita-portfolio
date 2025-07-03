@@ -36,7 +36,8 @@ export const Hero = () => {
     // Create a link to download the CV
     const link = document.createElement('a');
     link.href = '/lovable-uploads/5c32b318-bf52-489c-881c-9806a9a4853f.png';
-    link.download = 'Ankita_Parit_Resume.pdf';
+    link.download = 'Ankita_Parit_Resume.png';
+    link.target = '_blank';
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -47,7 +48,7 @@ export const Hero = () => {
   };
 
   const openGitHub = () => {
-    window.open('https://github.com/ankyaa', '_blank');
+    window.open('https://github.com/Ankyaa?tab=projects', '_blank');
   };
 
   const openEmail = () => {
@@ -56,19 +57,11 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative">
-      {/* Darker overlay for better text readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-900/80 via-blue-900/70 to-purple-900/80"></div>
-      
-      {/* Background Wallpaper with reduced opacity */}
-      <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-30"
-        style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
-        }}
-      ></div>
+      {/* Background with better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-purple-900"></div>
       
       {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-20" style={{
+      <div className="absolute inset-0 opacity-10" style={{
         backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='m36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`
       }}></div>
       
@@ -87,7 +80,7 @@ export const Hero = () => {
 
           <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-white">
             Hi, I'm{" "}
-            <span className="text-yellow-400 bg-gradient-to-r from-yellow-400 to-orange-400 bg-clip-text text-transparent">Ankita Parit</span>
+            <span className="bg-gradient-to-r from-yellow-400 via-orange-400 to-pink-400 bg-clip-text text-transparent">Ankita Parit</span>
           </h1>
           <p className="text-xl sm:text-2xl text-gray-200 mb-4">
             Senior Project Specialist & Data Analytics Expert
@@ -112,7 +105,7 @@ export const Hero = () => {
             <Button 
               variant="outline" 
               size="lg" 
-              className="hover-scale border-white text-white hover:bg-white hover:text-gray-900"
+              className="hover-scale border-2 border-white text-white bg-transparent hover:bg-white hover:text-gray-900 font-medium"
               onClick={downloadCV}
             >
               Download CV

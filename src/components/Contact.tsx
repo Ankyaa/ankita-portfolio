@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -44,45 +45,47 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
-      // Save to database (Supabase integration)
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          timestamp: new Date().toISOString()
-        })
+      // Save to Supabase database
+      const { data, error } = await supabase
+        .from('contact_submissions')
+        .insert([
+          {
+            first_name: formData.firstName,
+            last_name: formData.lastName,
+            email: formData.email,
+            subject: formData.subject,
+            message: formData.message
+          }
+        ]);
+
+      if (error) {
+        throw error;
+      }
+
+      // Send email notification through edge function
+      const { error: emailError } = await supabase.functions.invoke('send-notification', {
+        body: formData
       });
 
-      if (response.ok) {
-        // Send email notification
-        await fetch('/api/send-notification', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formData)
-        });
-
-        toast({
-          title: "Message Sent Successfully! 🎉",
-          description: "Hey, your message has been sent to Ankita successfully! She'll get back to you soon.",
-          duration: 5000
-        });
-
-        // Reset form
-        setFormData({
-          firstName: '',
-          lastName: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-      } else {
-        throw new Error('Failed to send message');
+      if (emailError) {
+        console.warn('Email notification failed:', emailError);
+        // Continue with success flow even if email fails
       }
+
+      toast({
+        title: "Message Sent Successfully! 🎉",
+        description: "Hey, your message has been sent to Ankita successfully! She'll get back to you soon.",
+        duration: 5000
+      });
+
+      // Reset form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        email: '',
+        subject: '',
+        message: ''
+      });
     } catch (error) {
       toast({
         title: "Error",
