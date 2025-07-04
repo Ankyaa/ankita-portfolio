@@ -75,12 +75,13 @@ export const Projects = () => {
           backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
         }}
       />
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-indigo-100/30"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/50">
+        <div className="bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/40">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
               Featured Projects
             </h2>
             <p className="text-lg text-gray-600">
@@ -90,11 +91,11 @@ export const Projects = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="relative h-96 perspective-1000">
+              <div key={index} className="relative h-[420px] perspective-1000">
                 <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${flippedCards.includes(index) ? 'rotate-y-180' : ''}`}>
                   {/* Front of card */}
                   <Card className="absolute inset-0 hover-scale overflow-hidden backface-hidden bg-white shadow-lg border border-gray-200">
-                    <div className="aspect-video overflow-hidden">
+                    <div className="aspect-[4/3] overflow-hidden">
                       <img 
                         src={project.image} 
                         alt={project.title}
@@ -104,27 +105,27 @@ export const Projects = () => {
                     <CardHeader className="pb-2">
                       <CardTitle className="text-lg text-gray-800 line-clamp-2">{project.title}</CardTitle>
                       <CardDescription className="text-gray-600 text-sm line-clamp-2">{project.description}</CardDescription>
-                      <p className="text-sm text-blue-600 font-medium">Clients: {project.clients}</p>
+                      <p className="text-sm text-indigo-600 font-medium">Clients: {project.clients}</p>
                     </CardHeader>
-                    <CardContent className="pt-0">
-                      <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
+                    <CardContent className="pt-0 space-y-3">
+                      <div className="flex flex-wrap gap-2">
+                        {project.technologies.slice(0, 2).map((tech, techIndex) => (
                           <span 
                             key={techIndex}
-                            className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded"
+                            className="px-2 py-1 bg-indigo-100 text-indigo-700 text-xs rounded"
                           >
                             {tech}
                           </span>
                         ))}
-                        {project.technologies.length > 3 && (
+                        {project.technologies.length > 2 && (
                           <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
-                            +{project.technologies.length - 3} more
+                            +{project.technologies.length - 2} more
                           </span>
                         )}
                       </div>
                       <Button 
                         size="sm" 
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md"
+                        className="w-full bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-700 hover:to-purple-700 text-white shadow-md"
                         onClick={() => toggleCard(index)}
                       >
                         <BarChart3 className="h-4 w-4 mr-2" />
@@ -134,9 +135,9 @@ export const Projects = () => {
                   </Card>
 
                   {/* Back of card */}
-                  <Card className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-blue-50 to-purple-50 shadow-lg border border-blue-200">
+                  <Card className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-indigo-50 to-purple-50 shadow-lg border border-indigo-200">
                     <CardHeader className="pb-3">
-                      <CardTitle className="text-lg text-blue-700">Work Experience</CardTitle>
+                      <CardTitle className="text-lg text-indigo-700">Work Experience</CardTitle>
                       <CardDescription className="font-medium text-gray-700">{project.title}</CardDescription>
                     </CardHeader>
                     <CardContent className="h-full flex flex-col justify-between pt-0">
@@ -146,7 +147,7 @@ export const Projects = () => {
                       <Button 
                         size="sm" 
                         variant="outline"
-                        className="w-full border-blue-300 text-blue-700 hover:bg-blue-50"
+                        className="w-full border-indigo-300 text-indigo-700 hover:bg-indigo-50"
                         onClick={() => toggleCard(index)}
                       >
                         <ArrowLeft className="h-4 w-4 mr-2" />

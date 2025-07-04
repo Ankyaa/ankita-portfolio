@@ -21,10 +21,10 @@ export const Navigation = () => {
   };
 
   return (
-    <nav className="fixed top-0 w-full bg-slate-900/80 backdrop-blur-md border-b border-white/10 z-50">
+    <nav className="fixed top-0 w-full bg-slate-800/90 backdrop-blur-md border-b border-white/10 z-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          <div className="font-bold text-xl bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
+          <div className="font-bold text-xl bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
             Ankita's Portfolio
           </div>
           
@@ -34,10 +34,10 @@ export const Navigation = () => {
               <button
                 key={item.name}
                 onClick={() => scrollToSection(item.href)}
-                className="text-slate-200 hover:text-blue-400 transition-all duration-300 hover:scale-110 hover:-translate-y-1 font-medium relative group"
+                className="text-slate-200 hover:text-indigo-400 transition-all duration-300 hover:scale-110 hover:-translate-y-1 font-medium relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-indigo-400 to-purple-400 transition-all duration-300 group-hover:w-full"></span>
               </button>
             ))}
           </div>
@@ -58,12 +58,12 @@ export const Navigation = () => {
         {/* Mobile Navigation Menu */}
         {isOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-900/90 backdrop-blur-md rounded-lg mx-4 mb-4">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-slate-800/95 backdrop-blur-md rounded-lg mx-4 mb-4">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="block px-3 py-2 text-base font-medium text-slate-200 hover:text-blue-400 transition-colors w-full text-left"
+                  className="block px-3 py-2 text-base font-medium text-slate-200 hover:text-indigo-400 transition-colors w-full text-left"
                 >
                   {item.name}
                 </button>
