@@ -34,10 +34,10 @@ export const About = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/10 to-blue-900/20"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/40">
+        <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/20">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">About Me</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">About Me</h2>
+            <p className="text-lg text-white/90 max-w-2xl mx-auto">
               Senior Project Specialist with expertise in managing complex projects and 
               driving organizational success through data-driven decision making.
             </p>
@@ -45,7 +45,7 @@ export const About = () => {
 
           <div className="mb-16">
             <div className="text-center mb-8">
-              <div className="w-32 h-32 bg-gradient-to-br from-indigo-100 via-purple-100 to-blue-100 rounded-full flex items-center justify-center shadow-xl mx-auto mb-6 border border-indigo-200 relative group cursor-pointer">
+              <div className="w-32 h-32 bg-gradient-to-br from-indigo-400/20 via-purple-400/20 to-blue-400/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl mx-auto mb-6 border border-indigo-400/30 relative group cursor-pointer">
                 <span className="text-5xl">👩‍💼</span>
                 {/* Hover tooltip */}
                 <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
@@ -56,23 +56,23 @@ export const About = () => {
             </div>
             
             <div className="max-w-4xl mx-auto text-center space-y-6">
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-white/90">
                 I'm an accomplished Senior Project Specialist based in Thane, India, with over 7 years 
                 of experience managing complex projects from initiation to closure. I specialize in 
                 resource planning, effort estimation, and process optimization to enhance operational efficiency.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-white/90">
                 My expertise spans across project management, data visualization, and stakeholder engagement. 
                 I've successfully managed projects for key clients including Salesforce, Coca-Cola, 
                 Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
                 with organizational objectives.
               </p>
-              <p className="text-lg text-gray-600">
+              <p className="text-lg text-white/90">
                 I hold certifications in Business Analytics and Data Science with AI/ML, and I'm passionate 
                 about leveraging data-driven insights to drive continuous improvement and business growth.
               </p>
-              <div className="bg-gradient-to-r from-indigo-100 to-purple-100 p-4 rounded-lg max-w-2xl mx-auto border border-indigo-200">
-                <p className="text-lg font-medium text-indigo-700">
+              <div className="bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm p-4 rounded-lg max-w-2xl mx-auto border border-indigo-400/30">
+                <p className="text-lg font-medium text-indigo-200">
                   🚀 Currently exploring AI applications in project management and business analytics
                 </p>
               </div>
@@ -81,11 +81,11 @@ export const About = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="hover-scale border-0 shadow-lg bg-gradient-to-br from-white/90 to-gray-50/80 backdrop-blur-sm border border-gray-200 hover:shadow-xl transition-all duration-300">
+              <Card key={index} className="hover-scale border-0 shadow-lg bg-gradient-to-br from-white/10 to-gray-500/10 backdrop-blur-sm border border-white/20 hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-6 text-center">
-                  <feature.icon className="h-12 w-12 mx-auto mb-4 text-indigo-600" />
-                  <h3 className="text-xl font-semibold mb-3 text-gray-800">{feature.title}</h3>
-                  <p className="text-gray-600">{feature.description}</p>
+                  <feature.icon className="h-12 w-12 mx-auto mb-4 text-indigo-300" />
+                  <h3 className="text-xl font-semibold mb-3 text-white">{feature.title}</h3>
+                  <p className="text-gray-200">{feature.description}</p>
                 </CardContent>
               </Card>
             ))}

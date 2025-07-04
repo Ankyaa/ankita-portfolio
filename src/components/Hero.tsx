@@ -148,10 +148,11 @@ export const Hero = () => {
         <div className="fixed bottom-6 right-6 z-50">
           <button 
             onClick={scrollToNext} 
-            className="flex flex-col items-center text-white/80 hover:text-white transition-colors bg-black/20 backdrop-blur-sm rounded-full px-3 py-4 shadow-lg text-xs hover:bg-black/30 animate-bounce"
+            className="flex flex-col items-center text-white/80 hover:text-white transition-colors bg-black/20 backdrop-blur-sm rounded-full px-2 py-3 shadow-lg hover:bg-black/30 animate-bounce"
           >
-            <ChevronDown className="h-5 w-5 mb-1" />
-            <span className="text-xs">Scroll Down</span>
+            <span className="text-xs mb-1">Scroll</span>
+            <ChevronDown className="h-4 w-4" />
+            <span className="text-xs mt-1">Down</span>
           </button>
         </div>
       )}
