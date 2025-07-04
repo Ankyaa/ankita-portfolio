@@ -93,7 +93,7 @@ export const Projects = () => {
               <div key={index} className="relative h-96 perspective-1000">
                 <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${flippedCards.includes(index) ? 'rotate-y-180' : ''}`}>
                   {/* Front of card */}
-                  <Card className="absolute inset-0 hover-scale overflow-hidden backface-hidden bg-white shadow-lg">
+                  <Card className="absolute inset-0 hover-scale overflow-hidden backface-hidden bg-white shadow-lg border border-gray-200">
                     <div className="aspect-video overflow-hidden">
                       <img 
                         src={project.image} 
@@ -102,13 +102,13 @@ export const Projects = () => {
                       />
                     </div>
                     <CardHeader className="pb-2">
-                      <CardTitle className="text-lg text-gray-800">{project.title}</CardTitle>
-                      <CardDescription className="text-gray-600">{project.description}</CardDescription>
+                      <CardTitle className="text-lg text-gray-800 line-clamp-2">{project.title}</CardTitle>
+                      <CardDescription className="text-gray-600 text-sm line-clamp-2">{project.description}</CardDescription>
                       <p className="text-sm text-blue-600 font-medium">Clients: {project.clients}</p>
                     </CardHeader>
                     <CardContent className="pt-0">
                       <div className="flex flex-wrap gap-2 mb-4">
-                        {project.technologies.map((tech, techIndex) => (
+                        {project.technologies.slice(0, 3).map((tech, techIndex) => (
                           <span 
                             key={techIndex}
                             className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded"
@@ -116,10 +116,15 @@ export const Projects = () => {
                             {tech}
                           </span>
                         ))}
+                        {project.technologies.length > 3 && (
+                          <span className="px-2 py-1 bg-gray-100 text-gray-600 text-xs rounded">
+                            +{project.technologies.length - 3} more
+                          </span>
+                        )}
                       </div>
                       <Button 
                         size="sm" 
-                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white shadow-md"
                         onClick={() => toggleCard(index)}
                       >
                         <BarChart3 className="h-4 w-4 mr-2" />
@@ -129,13 +134,13 @@ export const Projects = () => {
                   </Card>
 
                   {/* Back of card */}
-                  <Card className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-blue-50 to-purple-50 shadow-lg">
-                    <CardHeader>
+                  <Card className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-blue-50 to-purple-50 shadow-lg border border-blue-200">
+                    <CardHeader className="pb-3">
                       <CardTitle className="text-lg text-blue-700">Work Experience</CardTitle>
                       <CardDescription className="font-medium text-gray-700">{project.title}</CardDescription>
                     </CardHeader>
-                    <CardContent className="h-full flex flex-col justify-between">
-                      <p className="text-sm text-gray-700 mb-4 flex-grow overflow-y-auto">
+                    <CardContent className="h-full flex flex-col justify-between pt-0">
+                      <p className="text-sm text-gray-700 mb-4 flex-grow overflow-y-auto leading-relaxed">
                         {project.experience}
                       </p>
                       <Button 

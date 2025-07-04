@@ -5,7 +5,6 @@ import { Skills } from "@/components/Skills";
 import { Projects } from "@/components/Projects";
 import { Contact } from "@/components/Contact";
 import { Navigation } from "@/components/Navigation";
-import { SmartScroll } from "@/components/SmartScroll";
 
 const Index = () => {
   return (
@@ -16,7 +15,6 @@ const Index = () => {
       <Skills />
       <Projects />
       <Contact />
-      <SmartScroll />
     </div>
   );
 };
