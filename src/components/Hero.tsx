@@ -1,11 +1,8 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
-
 export const Hero = () => {
   const [showScrollButton, setShowScrollButton] = useState(true);
-
   useEffect(() => {
     const handleScroll = () => {
       const contactSection = document.querySelector('#contact');
@@ -15,12 +12,10 @@ export const Hero = () => {
         setShowScrollButton(!isContactVisible);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToNext = () => {
     const sections = ['home', 'about', 'skills', 'projects', 'contact'];
     const currentSection = sections.find(sectionId => {
@@ -31,64 +26,55 @@ export const Hero = () => {
       }
       return false;
     });
-
     const currentIndex = sections.indexOf(currentSection || 'home');
     const nextIndex = currentIndex + 1;
-    
     if (nextIndex < sections.length) {
       const nextSection = document.querySelector(`#${sections[nextIndex]}`);
-      nextSection?.scrollIntoView({ behavior: "smooth" });
+      nextSection?.scrollIntoView({
+        behavior: "smooth"
+      });
     }
   };
-
   const scrollToProjects = () => {
     const projectsSection = document.querySelector('#projects');
     projectsSection?.scrollIntoView({
       behavior: "smooth"
     });
   };
-
   const downloadCV = () => {
     // Create a proper PDF download link
     const link = document.createElement('a');
     link.href = '/lovable-uploads/5c32b318-bf52-489c-881c-9806a9a4853f.png'; // This should be replaced with actual PDF
     link.download = 'Ankita_Parit_Resume.pdf';
     link.target = '_blank';
-    
+
     // Add some styling to indicate it's a PDF
     const toast = document.createElement('div');
     toast.textContent = 'CV Download Started - Opening in new tab';
     toast.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #4F46E5; color: white; padding: 12px 24px; border-radius: 8px; z-index: 9999; font-size: 14px;';
     document.body.appendChild(toast);
-    
     setTimeout(() => {
       document.body.removeChild(toast);
     }, 3000);
-    
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
   };
-
   const openLinkedIn = () => {
     window.open('https://www.linkedin.com/in/ankita-parit-984130157/', '_blank');
   };
-
   const openGitHub = () => {
     window.open('https://github.com/Ankyaa?tab=projects', '_blank');
   };
-
   const openEmail = () => {
     window.location.href = 'mailto:ankita.parit6@gmail.com';
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       {/* White Mountain Background with Blur Effect */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
-        }} />
+        backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
+      }} />
         <div className="absolute inset-0 bg-white/20 backdrop-blur-sm"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-indigo-100/30"></div>
       </div>
@@ -96,7 +82,7 @@ export const Hero = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
         <div className="animate-fade-in">
           {/* Profile Photo */}
-          <div className="mb-8 flex justify-center">
+          <div className="mb-8 flex justify-center my-[10px]">
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl backdrop-blur-sm bg-white/10">
               <img src="/lovable-uploads/0f7a555b-f3bc-4d06-9ff7-997e4f06792a.png" alt="Ankita Parit" className="w-full h-full object-cover" />
             </div>
@@ -142,17 +128,11 @@ export const Hero = () => {
       </div>
 
       {/* Scroll Up Button */}
-      {showScrollButton && (
-        <div className="fixed bottom-4 right-4 z-50 animate-bounce">
-          <button 
-            onClick={scrollToNext} 
-            className="flex flex-col items-center text-gray-700 hover:text-blue-600 transition-colors bg-white/20 backdrop-blur-sm rounded-full p-3 shadow-lg text-xs border border-gray-300 hover:bg-white/30"
-          >
+      {showScrollButton && <div className="fixed bottom-4 right-4 z-50 animate-bounce">
+          <button onClick={scrollToNext} className="flex flex-col items-center text-gray-700 hover:text-blue-600 transition-colors bg-white/20 backdrop-blur-sm rounded-full p-3 shadow-lg text-xs border border-gray-300 hover:bg-white/30">
             <ChevronUp className="h-4 w-4 mb-1" />
             <span>Next</span>
           </button>
-        </div>
-      )}
-    </section>
-  );
+        </div>}
+    </section>;
 };
