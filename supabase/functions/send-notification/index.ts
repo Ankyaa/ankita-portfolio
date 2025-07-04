@@ -15,8 +15,8 @@ serve(async (req) => {
   try {
     const { firstName, lastName, email, subject, message } = await req.json()
     
-    // Email configuration
-    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
+    // Email configuration with updated API key
+    const RESEND_API_KEY = 're_gmJPcGA6_P4GdcQw5mdRj2xE6Z5Q8zShd'
     
     if (!RESEND_API_KEY) {
       console.error('RESEND_API_KEY not found')
@@ -36,7 +36,7 @@ serve(async (req) => {
       subject: `New Portfolio Contact: ${subject}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; background-color: #f8fafc; border-radius: 10px;">
-          <div style="background: linear-gradient(135deg, #10b981, #14b8a6); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
+          <div style="background: linear-gradient(135deg, #3b82f6, #8b5cf6); padding: 20px; border-radius: 10px; margin-bottom: 20px;">
             <h2 style="color: white; margin: 0; text-align: center;">New Portfolio Contact Form Submission</h2>
           </div>
           

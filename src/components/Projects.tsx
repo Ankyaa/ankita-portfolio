@@ -1,7 +1,7 @@
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { BarChart3 } from "lucide-react";
+import { BarChart3, ArrowLeft } from "lucide-react";
 import { useState } from "react";
 
 export const Projects = () => {
@@ -68,19 +68,22 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="py-20 relative">
-      {/* Background Wallpaper */}
+      {/* White Mountain Background with Blur Effect */}
       <div 
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
         }}
-      ></div>
+      />
+      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 shadow-xl">
+        <div className="bg-white/80 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/50">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Projects</h2>
-            <p className="text-lg text-muted-foreground">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent">
+              Featured Projects
+            </h2>
+            <p className="text-lg text-gray-600">
               Key projects delivered for Fortune 500 companies and enterprise clients
             </p>
           </div>
@@ -90,7 +93,7 @@ export const Projects = () => {
               <div key={index} className="relative h-96 perspective-1000">
                 <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${flippedCards.includes(index) ? 'rotate-y-180' : ''}`}>
                   {/* Front of card */}
-                  <Card className="absolute inset-0 hover-scale overflow-hidden backface-hidden">
+                  <Card className="absolute inset-0 hover-scale overflow-hidden backface-hidden bg-white shadow-lg">
                     <div className="aspect-video overflow-hidden">
                       <img 
                         src={project.image} 
@@ -98,40 +101,38 @@ export const Projects = () => {
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <CardHeader>
-                      <CardTitle className="text-lg">{project.title}</CardTitle>
-                      <CardDescription>{project.description}</CardDescription>
-                      <p className="text-sm text-primary font-medium">Clients: {project.clients}</p>
+                    <CardHeader className="pb-2">
+                      <CardTitle className="text-lg text-gray-800">{project.title}</CardTitle>
+                      <CardDescription className="text-gray-600">{project.description}</CardDescription>
+                      <p className="text-sm text-blue-600 font-medium">Clients: {project.clients}</p>
                     </CardHeader>
-                    <CardContent>
+                    <CardContent className="pt-0">
                       <div className="flex flex-wrap gap-2 mb-4">
                         {project.technologies.map((tech, techIndex) => (
                           <span 
                             key={techIndex}
-                            className="px-2 py-1 bg-primary/10 text-primary text-xs rounded"
+                            className="px-2 py-1 bg-blue-100 text-blue-700 text-xs rounded"
                           >
                             {tech}
                           </span>
                         ))}
                       </div>
-                      <div className="flex gap-2">
-                        <Button 
-                          size="sm" 
-                          className="flex-1"
-                          onClick={() => toggleCard(index)}
-                        >
-                          <BarChart3 className="h-4 w-4 mr-2" />
-                          View Details
-                        </Button>
-                      </div>
+                      <Button 
+                        size="sm" 
+                        className="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white"
+                        onClick={() => toggleCard(index)}
+                      >
+                        <BarChart3 className="h-4 w-4 mr-2" />
+                        View Details
+                      </Button>
                     </CardContent>
                   </Card>
 
                   {/* Back of card */}
-                  <Card className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-primary/10 to-blue-100">
+                  <Card className="absolute inset-0 backface-hidden rotate-y-180 bg-gradient-to-br from-blue-50 to-purple-50 shadow-lg">
                     <CardHeader>
-                      <CardTitle className="text-lg text-primary">Work Experience</CardTitle>
-                      <CardDescription className="font-medium">{project.title}</CardDescription>
+                      <CardTitle className="text-lg text-blue-700">Work Experience</CardTitle>
+                      <CardDescription className="font-medium text-gray-700">{project.title}</CardDescription>
                     </CardHeader>
                     <CardContent className="h-full flex flex-col justify-between">
                       <p className="text-sm text-gray-700 mb-4 flex-grow overflow-y-auto">
@@ -140,9 +141,10 @@ export const Projects = () => {
                       <Button 
                         size="sm" 
                         variant="outline"
-                        className="w-full"
+                        className="w-full border-blue-300 text-blue-700 hover:bg-blue-50"
                         onClick={() => toggleCard(index)}
                       >
+                        <ArrowLeft className="h-4 w-4 mr-2" />
                         Back to Project
                       </Button>
                     </CardContent>
