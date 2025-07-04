@@ -4,7 +4,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-import { Mail, MapPin, Phone, Linkedin } from "lucide-react";
+import { Mail, MapPin, Phone, Linkedin, Copy, Check } from "lucide-react";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
@@ -19,6 +19,7 @@ export const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [copiedField, setCopiedField] = useState<string | null>(null);
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { id, value } = e.target;
@@ -28,6 +29,25 @@ export const Contact = () => {
   const validateForm = () => {
     const { firstName, lastName, email, subject, message } = formData;
     return firstName && lastName && email && subject && message;
+  };
+
+  const copyToClipboard = async (text: string, field: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopiedField(field);
+      toast({
+        title: "Copied!",
+        description: `${field} copied to clipboard`,
+        duration: 2000
+      });
+      setTimeout(() => setCopiedField(null), 2000);
+    } catch (err) {
+      toast({
+        title: "Copy failed",
+        description: "Unable to copy to clipboard",
+        variant: "destructive"
+      });
+    }
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -112,14 +132,15 @@ export const Contact = () => {
 
   return (
     <section id="contact" className="py-20 relative">
-      {/* White Mountain Background with Blur Effect */}
+      {/* Nature Mountain Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
+          backgroundImage: `url("/lovable-uploads/bb1677dc-a840-43aa-8b3a-98106fb3d1ed.png")`
         }}
       />
-      <div className="absolute inset-0 bg-white/70 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-[2px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-purple-900/20 to-blue-900/30"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/90 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/50">
@@ -143,18 +164,44 @@ export const Contact = () => {
 
               <div className="space-y-4">
                 <div 
-                  className="flex items-center space-x-3 p-4 rounded-lg bg-blue-50 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors"
+                  className="flex items-center justify-between space-x-3 p-4 rounded-lg bg-blue-50 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors group"
                   onClick={openEmail}
                 >
-                  <Mail className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-700">ankita.parit6@gmail.com</span>
+                  <div className="flex items-center space-x-3">
+                    <Mail className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">ankita.parit6@gmail.com</span>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      copyToClipboard('ankita.parit6@gmail.com', 'Email');
+                    }}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    {copiedField === 'Email' ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                  </Button>
                 </div>
                 <div 
-                  className="flex items-center space-x-3 p-4 rounded-lg bg-blue-50 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors"
+                  className="flex items-center justify-between space-x-3 p-4 rounded-lg bg-blue-50 border border-blue-100 cursor-pointer hover:bg-blue-100 transition-colors group"
                   onClick={makeCall}
                 >
-                  <Phone className="h-5 w-5 text-blue-600" />
-                  <span className="text-gray-700">+91-8975670296</span>
+                  <div className="flex items-center space-x-3">
+                    <Phone className="h-5 w-5 text-blue-600" />
+                    <span className="text-gray-700">+91-8975670296</span>
+                  </div>
+                  <Button
+                    variant="ghost"
+                    size="sm"
+                    onClick={(e) => {
+                      e.stopPropagation();
+                      copyToClipboard('+91-8975670296', 'Phone');
+                    }}
+                    className="opacity-0 group-hover:opacity-100 transition-opacity"
+                  >
+                    {copiedField === 'Phone' ? <Check className="h-4 w-4 text-green-600" /> : <Copy className="h-4 w-4" />}
+                  </Button>
                 </div>
                 <div className="flex items-center space-x-3 p-4 rounded-lg bg-blue-50 border border-blue-100">
                   <MapPin className="h-5 w-5 text-blue-600" />

@@ -19,15 +19,15 @@ export const Skills = () => {
 
   return (
     <section id="skills" className="py-20 relative">
-      {/* White Mountain Background with Blur Effect */}
+      {/* Nature Mountain Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
+          backgroundImage: `url("/lovable-uploads/bb1677dc-a840-43aa-8b3a-98106fb3d1ed.png")`
         }}
       />
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-indigo-100/30"></div>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/10 to-blue-900/20"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/40">

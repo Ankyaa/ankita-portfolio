@@ -1,6 +1,6 @@
 
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail, ChevronUp } from "lucide-react";
+import { Github, Linkedin, Mail, ChevronDown } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export const Hero = () => {
@@ -83,16 +83,16 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
-      {/* White Mountain Background with Blur Effect */}
+      {/* Nature Mountain Background */}
       <div className="absolute inset-0">
         <div 
           className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
           style={{
-            backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
+            backgroundImage: `url("/lovable-uploads/bb1677dc-a840-43aa-8b3a-98106fb3d1ed.png")`
           }}
         />
-        <div className="absolute inset-0 bg-white/40 backdrop-blur-sm"></div>
-        <div className="absolute inset-0 bg-gradient-to-br from-blue-50/40 via-purple-50/30 to-indigo-100/40"></div>
+        <div className="absolute inset-0 bg-black/30 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-purple-900/20 to-blue-900/30"></div>
       </div>
       
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
@@ -104,17 +104,17 @@ export const Hero = () => {
             </div>
           </div>
 
-          <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-gray-800">
+          <h1 className="text-4xl sm:text-6xl font-bold mb-6 text-white">
             Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">Ankita Parit</span>
+            <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">Ankita Parit</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-gray-700 mb-4">
+          <p className="text-xl sm:text-2xl text-white/90 mb-4">
             Senior Project Specialist & Data Analytics Expert
           </p>
-          <p className="text-lg text-indigo-700 font-medium mb-8 bg-gradient-to-r from-indigo-600 to-purple-600 bg-clip-text text-transparent">
+          <p className="text-lg text-white/80 font-medium mb-8 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
             🤖 Passionate about AI & Machine Learning
           </p>
-          <p className="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
+          <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
             Accomplished project management professional with 7+ years of experience delivering 
             complex projects from inception to closure. Expert in data visualization, stakeholder 
             engagement, and driving operational efficiency across diverse industries.
@@ -130,28 +130,28 @@ export const Hero = () => {
           </div>
 
           <div className="flex justify-center space-x-6 px-0 my-[15px]">
-            <Button variant="ghost" size="icon" className="hover-scale hover:bg-white/20 text-gray-600 hover:text-indigo-600 hover:scale-110 transition-all duration-300" onClick={openGitHub}>
+            <Button variant="ghost" size="icon" className="hover-scale text-white/70 hover:text-white hover:bg-white/10 hover:scale-110 transition-all duration-300" onClick={openGitHub}>
               <Github className="h-6 w-6" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover-scale hover:bg-white/20 text-gray-600 hover:text-indigo-600 hover:scale-110 transition-all duration-300" onClick={openLinkedIn}>
+            <Button variant="ghost" size="icon" className="hover-scale text-white/70 hover:text-white hover:bg-white/10 hover:scale-110 transition-all duration-300" onClick={openLinkedIn}>
               <Linkedin className="h-6 w-6" />
             </Button>
-            <Button variant="ghost" size="icon" className="hover-scale hover:bg-white/20 text-gray-600 hover:text-indigo-600 hover:scale-110 transition-all duration-300" onClick={openEmail}>
+            <Button variant="ghost" size="icon" className="hover-scale text-white/70 hover:text-white hover:bg-white/10 hover:scale-110 transition-all duration-300" onClick={openEmail}>
               <Mail className="h-6 w-6" />
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Scroll Up Button */}
+      {/* Smart Scroll Down Button */}
       {showScrollButton && (
-        <div className="fixed bottom-4 right-4 z-50 animate-bounce">
+        <div className="fixed bottom-6 right-6 z-50">
           <button 
             onClick={scrollToNext} 
-            className="flex flex-col items-center text-gray-600 hover:text-indigo-600 transition-colors bg-white/30 backdrop-blur-sm rounded-full p-3 shadow-lg text-xs hover:bg-white/40"
+            className="flex flex-col items-center text-white/80 hover:text-white transition-colors bg-black/20 backdrop-blur-sm rounded-full px-3 py-4 shadow-lg text-xs hover:bg-black/30 animate-bounce"
           >
-            <ChevronUp className="h-4 w-4 mb-1" />
-            <span>Scroll Up</span>
+            <ChevronDown className="h-5 w-5 mb-1" />
+            <span className="text-xs">Scroll Down</span>
           </button>
         </div>
       )}

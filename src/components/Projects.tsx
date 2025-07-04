@@ -68,20 +68,20 @@ export const Projects = () => {
 
   return (
     <section id="projects" className="py-20 relative">
-      {/* White Mountain Background with Blur Effect */}
+      {/* Nature Mountain Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=2070&auto=format&fit=crop")`
+          backgroundImage: `url("/lovable-uploads/bb1677dc-a840-43aa-8b3a-98106fb3d1ed.png")`
         }}
       />
-      <div className="absolute inset-0 bg-white/50 backdrop-blur-sm"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-purple-50/20 to-indigo-100/30"></div>
+      <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/20 via-purple-900/10 to-blue-900/20"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/70 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/40">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
+          <div className="text-center mb-20">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 bg-clip-text text-transparent">
               Featured Projects
             </h2>
             <p className="text-lg text-gray-600">
@@ -91,7 +91,7 @@ export const Projects = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
-              <div key={index} className="relative h-[420px] perspective-1000">
+              <div key={index} className="relative h-[480px] perspective-1000">
                 <div className={`relative w-full h-full transition-transform duration-700 transform-style-preserve-3d ${flippedCards.includes(index) ? 'rotate-y-180' : ''}`}>
                   {/* Front of card */}
                   <Card className="absolute inset-0 hover-scale overflow-hidden backface-hidden bg-white shadow-lg border border-gray-200">
@@ -102,12 +102,12 @@ export const Projects = () => {
                         className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                       />
                     </div>
-                    <CardHeader className="pb-2">
+                    <CardHeader className="pb-3">
                       <CardTitle className="text-lg text-gray-800 line-clamp-2">{project.title}</CardTitle>
                       <CardDescription className="text-gray-600 text-sm line-clamp-2">{project.description}</CardDescription>
                       <p className="text-sm text-indigo-600 font-medium">Clients: {project.clients}</p>
                     </CardHeader>
-                    <CardContent className="pt-0 space-y-3">
+                    <CardContent className="pt-0 pb-4 space-y-3">
                       <div className="flex flex-wrap gap-2">
                         {project.technologies.slice(0, 2).map((tech, techIndex) => (
                           <span 
@@ -140,7 +140,7 @@ export const Projects = () => {
                       <CardTitle className="text-lg text-indigo-700">Work Experience</CardTitle>
                       <CardDescription className="font-medium text-gray-700">{project.title}</CardDescription>
                     </CardHeader>
-                    <CardContent className="h-full flex flex-col justify-between pt-0">
+                    <CardContent className="h-full flex flex-col justify-between pt-0 pb-4">
                       <p className="text-sm text-gray-700 mb-4 flex-grow overflow-y-auto leading-relaxed">
                         {project.experience}
                       </p>
