@@ -86,26 +86,26 @@ export const Contact = () => {
 
       console.log('Data saved to database successfully');
 
-      // Send email notification through edge function
-      console.log('Calling send-notification edge function...');
-      const { data: emailData, error: emailError } = await supabase.functions.invoke('send-notification', {
+      // Send email using Resend through edge function
+      console.log('Sending email via Resend...');
+      const { data: emailData, error: emailError } = await supabase.functions.invoke('send-email', {
         body: formData
       });
 
-      console.log('Edge function response:', { emailData, emailError });
+      console.log('Email response:', { emailData, emailError });
 
       if (emailError) {
-        console.error('Email notification error:', emailError);
+        console.error('Email sending error:', emailError);
         toast({
           title: "Form Submitted",
-          description: "Your message was saved but email notification failed. We'll still get back to you!",
+          description: "Your message was saved but email sending failed. We'll still get back to you!",
           duration: 5000
         });
       } else {
-        console.log('Email sent successfully');
+        console.log('Email sent successfully via Resend');
         toast({
           title: "Message Sent Successfully! 🎉",
-          description: "Your message has been sent to Ankita successfully! She'll get back to you soon.",
+          description: "Your message has been sent successfully! Ankita will get back to you soon.",
           duration: 5000
         });
       }
