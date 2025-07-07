@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -65,8 +64,10 @@ export const Contact = () => {
     setIsSubmitting(true);
 
     try {
+      console.log('Submitting contact form...', formData);
+
       // Save to Supabase database
-      const { data, error } = await supabase
+      const { data: dbData, error: dbError } = await supabase
         .from('contact_submissions')
         .insert([
           {
@@ -78,28 +79,36 @@ export const Contact = () => {
           }
         ]);
 
-      if (error) {
-        throw error;
+      if (dbError) {
+        console.error('Database error:', dbError);
+        throw dbError;
       }
+
+      console.log('Data saved to database successfully');
 
       // Send email notification through edge function
-      const { error: emailError } = await supabase.functions.invoke('send-notification', {
-        body: {
-          ...formData,
-          to_email: 'ankita.parit6@gmail.com' // Your email
-        }
+      console.log('Calling send-notification edge function...');
+      const { data: emailData, error: emailError } = await supabase.functions.invoke('send-notification', {
+        body: formData
       });
+
+      console.log('Edge function response:', { emailData, emailError });
 
       if (emailError) {
-        console.warn('Email notification failed:', emailError);
-        // Continue with success flow even if email fails
+        console.error('Email notification error:', emailError);
+        toast({
+          title: "Form Submitted",
+          description: "Your message was saved but email notification failed. We'll still get back to you!",
+          duration: 5000
+        });
+      } else {
+        console.log('Email sent successfully');
+        toast({
+          title: "Message Sent Successfully! 🎉",
+          description: "Your message has been sent to Ankita successfully! She'll get back to you soon.",
+          duration: 5000
+        });
       }
-
-      toast({
-        title: "Message Sent Successfully! 🎉",
-        description: "Hey, your message has been sent to Ankita successfully! She'll get back to you soon.",
-        duration: 5000
-      });
 
       // Reset form
       setFormData({
@@ -109,13 +118,14 @@ export const Contact = () => {
         subject: '',
         message: ''
       });
+
     } catch (error) {
+      console.error('Contact form error:', error);
       toast({
         title: "Error",
         description: "Failed to send message. Please try again.",
         variant: "destructive"
       });
-      console.error('Contact form error:', error);
     } finally {
       setIsSubmitting(false);
     }

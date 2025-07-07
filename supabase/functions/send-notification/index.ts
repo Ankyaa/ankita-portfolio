@@ -31,9 +31,8 @@ serve(async (req) => {
 
     console.log('Attempting to send email notification to: ankita.parit6@gmail.com')
     console.log('Contact details:', { firstName, lastName, email, subject })
-    console.log('Using API key:', RESEND_API_KEY ? 'Present' : 'Missing')
 
-    // Send email notification to Ankita
+    // Send email notification to Ankita using Resend API
     const emailData = {
       from: 'Portfolio Contact <onboarding@resend.dev>',
       to: ['ankita.parit6@gmail.com'],
@@ -87,7 +86,7 @@ serve(async (req) => {
       `
     }
 
-    console.log('Sending email with data:', JSON.stringify(emailData, null, 2))
+    console.log('Sending email with Resend API...')
 
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
@@ -124,7 +123,7 @@ serve(async (req) => {
       JSON.stringify({ 
         success: true, 
         emailId: result.id, 
-        message: 'Email notification sent to Ankita successfully!' 
+        message: 'Email notification sent successfully!' 
       }),
       { 
         status: 200,
