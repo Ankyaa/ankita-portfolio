@@ -15,13 +15,13 @@ serve(async (req) => {
   try {
     const { firstName, lastName, email, subject, message } = await req.json()
     
-    // Email configuration with your API key
-    const RESEND_API_KEY = 're_br2cMx1v_2eexoTEKniNTBWS7gnoYGQjF'
+    // Get the RESEND_API_KEY from Supabase secrets
+    const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
     
     if (!RESEND_API_KEY) {
-      console.error('RESEND_API_KEY not found')
+      console.error('RESEND_API_KEY not found in environment variables')
       return new Response(
-        JSON.stringify({ error: 'Email service not configured' }),
+        JSON.stringify({ error: 'Email service not configured - API key missing' }),
         { 
           status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -31,10 +31,11 @@ serve(async (req) => {
 
     console.log('Attempting to send email notification to: ankita.parit6@gmail.com')
     console.log('Contact details:', { firstName, lastName, email, subject })
+    console.log('Using API key:', RESEND_API_KEY ? 'Present' : 'Missing')
 
     // Send email notification to Ankita
     const emailData = {
-      from: 'Portfolio Contact <noreply@portfoliocontact.dev>',
+      from: 'Portfolio Contact <onboarding@resend.dev>',
       to: ['ankita.parit6@gmail.com'],
       subject: `🔔 New Portfolio Contact: ${subject}`,
       html: `
@@ -86,6 +87,8 @@ serve(async (req) => {
       `
     }
 
+    console.log('Sending email with data:', JSON.stringify(emailData, null, 2))
+
     const response = await fetch('https://api.resend.com/emails', {
       method: 'POST',
       headers: {
@@ -95,11 +98,18 @@ serve(async (req) => {
       body: JSON.stringify(emailData),
     })
 
+    const responseText = await response.text()
+    console.log('Resend API response status:', response.status)
+    console.log('Resend API response:', responseText)
+
     if (!response.ok) {
-      const errorText = await response.text()
-      console.error('Email sending failed:', response.status, errorText)
+      console.error('Email sending failed:', response.status, responseText)
       return new Response(
-        JSON.stringify({ error: 'Failed to send email notification', details: errorText }),
+        JSON.stringify({ 
+          error: 'Failed to send email notification', 
+          details: responseText,
+          status: response.status 
+        }),
         { 
           status: 500,
           headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -107,11 +117,15 @@ serve(async (req) => {
       )
     }
 
-    const result = await response.json()
+    const result = JSON.parse(responseText)
     console.log('Email sent successfully:', result)
 
     return new Response(
-      JSON.stringify({ success: true, emailId: result.id, message: 'Email notification sent to Ankita!' }),
+      JSON.stringify({ 
+        success: true, 
+        emailId: result.id, 
+        message: 'Email notification sent to Ankita successfully!' 
+      }),
       { 
         status: 200,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
@@ -121,7 +135,11 @@ serve(async (req) => {
   } catch (error) {
     console.error('Email notification error:', error)
     return new Response(
-      JSON.stringify({ error: 'Internal server error', details: error.message }),
+      JSON.stringify({ 
+        error: 'Internal server error', 
+        details: error.message,
+        stack: error.stack 
+      }),
       { 
         status: 500,
         headers: { ...corsHeaders, 'Content-Type': 'application/json' }
