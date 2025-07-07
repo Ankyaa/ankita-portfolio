@@ -42,20 +42,20 @@ export const Projects = () => {
       experience: "Managed content development projects for Salesforce platform. Coordinated with cross-functional teams to ensure content quality and timely delivery. Established workflows for content review, approval, and publishing processes."
     },
     {
-      title: "Medical Terminology E-Learning",
-      description: "Developed interactive HTML-based e-learning modules for medical education with comprehensive content",
+      title: "Medical Terminology Learning Module",
+      description: "Developed interactive HTML-based learning modules for medical education with comprehensive content",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-      technologies: ["HTML", "CSS", "XML", "Content Development", "E-Learning", "Medical Content"],
+      technologies: ["HTML", "CSS", "XML", "Content Development", "Medical Content"],
       clients: "Medical Education Sector",
       experience: "Created 20+ interactive learning modules covering medical terminology. Worked closely with subject matter experts to ensure content accuracy. Developed engaging learning experiences that improved knowledge retention and completion rates."
     },
     {
       title: "Corporate Training Solutions",
-      description: "Managed e-learning projects for Fortune 500 companies focusing on process optimization and content quality",
+      description: "Managed content development projects for Fortune 500 companies focusing on process optimization and quality",
       image: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&h=300&fit=crop",
       technologies: ["JIRA", "Content Management", "Quality Assurance", "Project Coordination"],
       clients: "Coca-Cola, Mondelez, Abbott",
-      experience: "Coordinated e-learning content development for multiple Fortune 500 clients. Managed project timelines, resource allocation, and quality assurance processes. Maintained strong client relationships and ensured project deliverables met requirements."
+      experience: "Coordinated content development for multiple Fortune 500 clients. Managed project timelines, resource allocation, and quality assurance processes. Maintained strong client relationships and ensured project deliverables met requirements."
     },
     {
       title: "Cengage Learning Platform",
@@ -94,7 +94,7 @@ export const Projects = () => {
               Featured Projects
             </h2>
             <p className="text-lg text-white/90">
-              Key e-learning and content development projects delivered for enterprise clients
+              Key projects delivered for enterprise clients across various industries
             </p>
           </div>
 
@@ -115,7 +115,7 @@ export const Projects = () => {
                       <CardHeader className="pb-3 flex-grow">
                         <CardTitle className="text-lg text-white line-clamp-2">{project.title}</CardTitle>
                         <CardDescription className="text-gray-300 text-sm line-clamp-2">{project.description}</CardDescription>
-                        <p className="text-sm text-indigo-300 font-medium">Clients: {project.clients}</p>
+                        <p className="text-sm text-yellow-300 font-medium">Clients: {project.clients}</p>
                       </CardHeader>
                       <CardContent className="pt-0 pb-4 space-y-3 mt-auto">
                         <div className="flex flex-wrap gap-2">
@@ -124,7 +124,7 @@ export const Projects = () => {
                             project.technologies.map((tech, techIndex) => (
                               <span 
                                 key={techIndex}
-                                className="px-2 py-1 bg-indigo-500/20 text-indigo-200 text-xs rounded backdrop-blur-sm"
+                                className="px-2 py-1 bg-indigo-500/30 text-white text-xs rounded backdrop-blur-sm border border-indigo-300/30"
                               >
                                 {tech}
                               </span>
@@ -135,7 +135,7 @@ export const Projects = () => {
                               {project.technologies.slice(0, 2).map((tech, techIndex) => (
                                 <span 
                                   key={techIndex}
-                                  className="px-2 py-1 bg-indigo-500/20 text-indigo-200 text-xs rounded backdrop-blur-sm"
+                                  className="px-2 py-1 bg-indigo-500/30 text-white text-xs rounded backdrop-blur-sm border border-indigo-300/30"
                                 >
                                   {tech}
                                 </span>
@@ -143,7 +143,7 @@ export const Projects = () => {
                               {project.technologies.length > 2 && (
                                 <button
                                   onClick={() => toggleSkills(index)}
-                                  className="px-2 py-1 bg-gray-500/20 text-gray-200 text-xs rounded backdrop-blur-sm hover:bg-gray-500/30 transition-colors"
+                                  className="px-2 py-1 bg-yellow-500/30 text-black font-medium text-xs rounded backdrop-blur-sm hover:bg-yellow-500/40 transition-colors border border-yellow-400/50"
                                 >
                                   +{project.technologies.length - 2} more
                                 </button>
@@ -153,7 +153,7 @@ export const Projects = () => {
                           {expandedSkills.includes(index) && project.technologies.length > 2 && (
                             <button
                               onClick={() => toggleSkills(index)}
-                              className="px-2 py-1 bg-gray-500/20 text-gray-200 text-xs rounded backdrop-blur-sm hover:bg-gray-500/30 transition-colors"
+                              className="px-2 py-1 bg-yellow-500/30 text-black font-medium text-xs rounded backdrop-blur-sm hover:bg-yellow-500/40 transition-colors border border-yellow-400/50"
                             >
                               Show less
                             </button>

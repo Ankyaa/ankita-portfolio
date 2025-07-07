@@ -7,7 +7,7 @@ export const About = () => {
     {
       icon: Target,
       title: "Project Excellence",
-      description: "Delivering high-quality e-learning projects within scope, budget, and schedule with 7+ years of experience"
+      description: "Delivering high-quality projects within scope, budget, and schedule with 7+ years of experience"
     },
     {
       icon: Users,
@@ -16,7 +16,7 @@ export const About = () => {
     },
     {
       icon: BarChart3,
-      title: "Data Visualization",
+      title: "Data & Analytics",
       description: "Creating impactful dashboards and reports using PowerBI and Tableau for business analysis"
     }
   ];
@@ -38,7 +38,7 @@ export const About = () => {
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">About Me</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Senior Project Specialist with expertise in managing complex e-learning projects and 
+              Senior Project Specialist with expertise in managing complex projects and 
               driving organizational success through effective project management.
             </p>
           </div>
@@ -58,22 +58,22 @@ export const About = () => {
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <p className="text-lg text-white/90">
                 I'm an accomplished Senior Project Specialist based in Thane, India, with over 7 years 
-                of experience managing complex e-learning projects from initiation to closure. I specialize in 
-                content development, resource planning, and process optimization to enhance educational outcomes.
+                of experience managing complex projects from initiation to closure. I specialize in 
+                resource planning, effort estimation, and process optimization to enhance operational efficiency.
               </p>
               <p className="text-lg text-white/90">
-                My expertise spans across project management, e-learning content creation, and CMS platforms. 
-                I've successfully managed projects for key clients including Salesforce, Coca-Cola, 
-                Mondelez, Accenture, Abbott, and many others, consistently delivering educational solutions that align 
+                My expertise spans across project management, data visualization, and stakeholder engagement. I've 
+                successfully managed projects for key clients including Salesforce, Coca-Cola, 
+                Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
                 with organizational objectives.
               </p>
               <p className="text-lg text-white/90">
-                I have completed courses in Business Analytics and Data Science, and I'm experienced in 
-                creating data visualizations using PowerBI and Tableau to support business decision-making.
+                I hold certifications in Business Analytics and Data Science with AI/ML, and I'm passionate about leveraging data-driven 
+                insights to drive continuous improvement and business growth.
               </p>
               <div className="bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm p-4 rounded-lg max-w-2xl mx-auto border border-indigo-400/30">
                 <p className="text-lg font-medium text-indigo-200">
-                  📚 Passionate about educational technology and creating engaging learning experiences
+                  🚀 Currently exploring AI applications in project management and business analytics
                 </p>
               </div>
             </div>

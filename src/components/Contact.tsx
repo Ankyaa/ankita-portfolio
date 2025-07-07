@@ -142,11 +142,11 @@ export const Contact = () => {
           backgroundImage: `url("/lovable-uploads/0eeea2b7-5896-40bb-9e33-3c6569181a30.png")`
         }}
       />
-      <div className="absolute inset-0 bg-black/60 backdrop-blur-[3px]"></div>
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/40 via-purple-900/30 to-blue-900/40"></div>
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-[3px]"></div>
+      <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-purple-900/20 to-blue-900/30"></div>
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="bg-white/20 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/30">
+        <div className="bg-white/15 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/30">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-300 via-purple-300 to-blue-300 bg-clip-text text-transparent">
               Get In Touch
@@ -157,11 +157,11 @@ export const Contact = () => {
           </div>
 
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white/15 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20">
+            <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 shadow-lg border border-white/20">
               <h3 className="text-2xl font-semibold mb-6 text-white">Let's work together</h3>
               <p className="text-white/90 mb-8 leading-relaxed">
                 I'm passionate about delivering exceptional project outcomes and creating 
-                engaging e-learning solutions that drive educational success. With my expertise in 
+                engaging solutions that drive organizational success. With my expertise in 
                 project management and content development, I bring proven approaches to complex challenges.
               </p>
 
@@ -220,7 +220,7 @@ export const Contact = () => {
               </div>
             </div>
 
-            <Card className="bg-white/15 backdrop-blur-sm shadow-lg border border-white/20">
+            <Card className="bg-white/5 backdrop-blur-sm shadow-lg border border-white/30">
               <CardHeader>
                 <CardTitle className="text-white">Send me a message</CardTitle>
                 <CardDescription className="text-white/80">
@@ -238,7 +238,7 @@ export const Contact = () => {
                         value={formData.firstName}
                         onChange={handleInputChange}
                         required
-                        className="bg-white/20 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
+                        className="bg-white/80 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
                       />
                     </div>
                     <div className="space-y-2">
@@ -249,7 +249,7 @@ export const Contact = () => {
                         value={formData.lastName}
                         onChange={handleInputChange}
                         required
-                        className="bg-white/20 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
+                        className="bg-white/80 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
                       />
                     </div>
                   </div>
@@ -262,7 +262,7 @@ export const Contact = () => {
                       value={formData.email}
                       onChange={handleInputChange}
                       required
-                      className="bg-white/20 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
+                      className="bg-white/80 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
                     />
                   </div>
                   <div className="space-y-2">
@@ -273,7 +273,7 @@ export const Contact = () => {
                       value={formData.subject}
                       onChange={handleInputChange}
                       required
-                      className="bg-white/20 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
+                      className="bg-white/80 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
                     />
                   </div>
                   <div className="space-y-2">
@@ -281,7 +281,7 @@ export const Contact = () => {
                     <Textarea 
                       id="message" 
                       placeholder="Tell me about your project requirements..." 
-                      className="min-h-[120px] bg-white/20 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
+                      className="min-h-[120px] bg-white/80 border-white/30 text-gray-900 placeholder:text-gray-600 backdrop-blur-sm"
                       value={formData.message}
                       onChange={handleInputChange}
                       required

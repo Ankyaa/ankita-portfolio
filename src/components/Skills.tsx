@@ -8,11 +8,11 @@ export const Skills = () => {
       skills: ["Agile Methodologies", "Scrum", "KANBAN", "Waterfall", "JIRA", "Trello", "Resource Planning", "Risk Assessment"]
     },
     {
-      title: "E-Learning & Content",
+      title: "Content & Platform Management",
       skills: ["Content Development", "CMS", "HTML", "CSS", "XML", "SharePoint", "Smartsheet", "Course Building", "Learning Objects"]
     },
     {
-      title: "Data Visualization",
+      title: "Data & Analytics",
       skills: ["Power BI", "Tableau", "Excel", "Business Analytics", "Dashboard Creation", "Data Reporting"]
     }
   ];
@@ -36,7 +36,7 @@ export const Skills = () => {
               Skills & Expertise
             </h2>
             <p className="text-lg text-white/90">
-              Comprehensive skill set spanning project management, e-learning content development, and data visualization
+              Comprehensive skill set spanning project management, content development, and data visualization
             </p>
           </div>
 
