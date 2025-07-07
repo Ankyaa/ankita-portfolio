@@ -8,22 +8,22 @@ export const Skills = () => {
       skills: ["Agile Methodologies", "Scrum", "KANBAN", "Waterfall", "JIRA", "Trello", "Resource Planning", "Risk Assessment"]
     },
     {
-      title: "Data & Analytics",
-      skills: ["Power BI", "Tableau", "Python", "SQL", "R", "Business Analytics", "Data Visualization", "Data Science & ML"]
+      title: "E-Learning & Content",
+      skills: ["Content Development", "CMS", "HTML", "CSS", "XML", "SharePoint", "Smartsheet", "Course Building", "Learning Objects"]
     },
     {
-      title: "AI & Technology",
-      skills: ["Machine Learning Basics", "AI Applications", "SharePoint", "Smartsheet", "Excel", "CMS", "HTML", "CSS", "XML"]
+      title: "Data Visualization",
+      skills: ["Power BI", "Tableau", "Excel", "Business Analytics", "Dashboard Creation", "Data Reporting"]
     }
   ];
 
   return (
-    <section id="skills" className="py-20 relative">
-      {/* Nature Mountain Background */}
+    <section id="skills" className="py-12 relative">
+      {/* New Blue Desk Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("/lovable-uploads/bb1677dc-a840-43aa-8b3a-98106fb3d1ed.png")`
+          backgroundImage: `url("/lovable-uploads/0eeea2b7-5896-40bb-9e33-3c6569181a30.png")`
         }}
       />
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
@@ -31,12 +31,12 @@ export const Skills = () => {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/20">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
               Skills & Expertise
             </h2>
             <p className="text-lg text-white/90">
-              Comprehensive skill set spanning project management, data analytics, and emerging AI technologies
+              Comprehensive skill set spanning project management, e-learning content development, and data visualization
             </p>
           </div>
 

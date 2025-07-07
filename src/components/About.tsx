@@ -7,7 +7,7 @@ export const About = () => {
     {
       icon: Target,
       title: "Project Excellence",
-      description: "Delivering high-quality projects within scope, budget, and schedule with 7+ years of experience"
+      description: "Delivering high-quality e-learning projects within scope, budget, and schedule with 7+ years of experience"
     },
     {
       icon: Users,
@@ -16,18 +16,18 @@ export const About = () => {
     },
     {
       icon: BarChart3,
-      title: "Data-Driven Insights",
-      description: "Creating impactful data visualizations and dashboards using PowerBI and Tableau for business analysis"
+      title: "Data Visualization",
+      description: "Creating impactful dashboards and reports using PowerBI and Tableau for business analysis"
     }
   ];
 
   return (
-    <section id="about" className="py-20 relative">
-      {/* Nature Mountain Background */}
+    <section id="about" className="py-12 relative">
+      {/* New Blue Desk Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("/lovable-uploads/bb1677dc-a840-43aa-8b3a-98106fb3d1ed.png")`
+          backgroundImage: `url("/lovable-uploads/0eeea2b7-5896-40bb-9e33-3c6569181a30.png")`
         }}
       />
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
@@ -35,16 +35,16 @@ export const About = () => {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/20">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">About Me</h2>
             <p className="text-lg text-white/90 max-w-2xl mx-auto">
-              Senior Project Specialist with expertise in managing complex projects and 
-              driving organizational success through data-driven decision making.
+              Senior Project Specialist with expertise in managing complex e-learning projects and 
+              driving organizational success through effective project management.
             </p>
           </div>
 
-          <div className="mb-16">
-            <div className="text-center mb-8">
+          <div className="mb-12">
+            <div className="text-center mb-6">
               <div className="w-32 h-32 bg-gradient-to-br from-indigo-400/20 via-purple-400/20 to-blue-400/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl mx-auto mb-6 border border-indigo-400/30 relative group cursor-pointer">
                 <span className="text-5xl">👩‍💼</span>
                 {/* Hover tooltip */}
@@ -58,22 +58,22 @@ export const About = () => {
             <div className="max-w-4xl mx-auto text-center space-y-6">
               <p className="text-lg text-white/90">
                 I'm an accomplished Senior Project Specialist based in Thane, India, with over 7 years 
-                of experience managing complex projects from initiation to closure. I specialize in 
-                resource planning, effort estimation, and process optimization to enhance operational efficiency.
+                of experience managing complex e-learning projects from initiation to closure. I specialize in 
+                content development, resource planning, and process optimization to enhance educational outcomes.
               </p>
               <p className="text-lg text-white/90">
-                My expertise spans across project management, data visualization, and stakeholder engagement. 
+                My expertise spans across project management, e-learning content creation, and CMS platforms. 
                 I've successfully managed projects for key clients including Salesforce, Coca-Cola, 
-                Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
+                Mondelez, Accenture, Abbott, and many others, consistently delivering educational solutions that align 
                 with organizational objectives.
               </p>
               <p className="text-lg text-white/90">
-                I hold certifications in Business Analytics and Data Science with AI/ML, and I'm passionate 
-                about leveraging data-driven insights to drive continuous improvement and business growth.
+                I have completed courses in Business Analytics and Data Science, and I'm experienced in 
+                creating data visualizations using PowerBI and Tableau to support business decision-making.
               </p>
               <div className="bg-gradient-to-r from-indigo-500/20 to-purple-500/20 backdrop-blur-sm p-4 rounded-lg max-w-2xl mx-auto border border-indigo-400/30">
                 <p className="text-lg font-medium text-indigo-200">
-                  🚀 Currently exploring AI applications in project management and business analytics
+                  📚 Passionate about educational technology and creating engaging learning experiences
                 </p>
               </div>
             </div>

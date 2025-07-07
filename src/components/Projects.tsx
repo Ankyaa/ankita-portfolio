@@ -6,6 +6,7 @@ import { useState } from "react";
 
 export const Projects = () => {
   const [flippedCards, setFlippedCards] = useState<number[]>([]);
+  const [expandedSkills, setExpandedSkills] = useState<number[]>([]);
 
   const toggleCard = (index: number) => {
     setFlippedCards(prev => 
@@ -15,64 +16,72 @@ export const Projects = () => {
     );
   };
 
+  const toggleSkills = (index: number) => {
+    setExpandedSkills(prev => 
+      prev.includes(index) 
+        ? prev.filter(i => i !== index)
+        : [...prev, index]
+    );
+  };
+
   const projects = [
     {
-      title: "Enterprise Data Visualization Dashboard",
-      description: "Created comprehensive PowerBI and Tableau dashboards for real-time user data analysis and business insights",
+      title: "PowerBI Dashboard Development",
+      description: "Created comprehensive PowerBI dashboards for real-time user data analysis and business reporting",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop",
-      technologies: ["Power BI", "Tableau", "Business Analytics", "Data Visualization"],
+      technologies: ["Power BI", "Data Visualization", "Business Analytics", "Excel", "Dashboard Design"],
       clients: "Multiple Enterprise Clients",
-      experience: "Led a team of 5 analysts to develop interactive dashboards that increased data accessibility by 40%. Implemented real-time data pipelines and automated reporting systems that saved 20+ hours weekly for stakeholders. Conducted training sessions for 50+ users across different departments."
+      experience: "Developed interactive dashboards that provided stakeholders with real-time insights into business performance. Created standardized templates and trained team members on dashboard usage. Improved data accessibility and reduced manual reporting time."
     },
     {
-      title: "Salesforce Project Management Suite",
-      description: "Led end-to-end project development for Salesforce platform configuration and content authoring solutions",
+      title: "Salesforce Content Management",
+      description: "Led content authoring and platform configuration for Salesforce learning solutions",
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
-      technologies: ["Salesforce", "Project Management", "Agile", "Stakeholder Management"],
+      technologies: ["Salesforce", "Content Development", "Project Management", "CMS"],
       clients: "Salesforce, Accenture",
-      experience: "Managed cross-functional teams of 12+ members across 3 time zones. Successfully delivered 8 major platform configurations on time and within budget. Established agile workflows that improved project delivery speed by 35% and enhanced stakeholder satisfaction scores to 95%."
+      experience: "Managed content development projects for Salesforce platform. Coordinated with cross-functional teams to ensure content quality and timely delivery. Established workflows for content review, approval, and publishing processes."
     },
     {
-      title: "Medical Terminology E-Learning Platform",
-      description: "Developed interactive HTML-based e-learning solutions and simulation tools for medical education",
+      title: "Medical Terminology E-Learning",
+      description: "Developed interactive HTML-based e-learning modules for medical education with comprehensive content",
       image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=400&h=300&fit=crop",
-      technologies: ["HTML", "CSS", "XML", "E-Learning", "Content Development"],
+      technologies: ["HTML", "CSS", "XML", "Content Development", "E-Learning", "Medical Content"],
       clients: "Medical Education Sector",
-      experience: "Designed and developed 25+ interactive modules covering complex medical terminology. Collaborated with subject matter experts to ensure content accuracy. The platform achieved 92% completion rates and improved learning outcomes by 30% compared to traditional methods."
+      experience: "Created 20+ interactive learning modules covering medical terminology. Worked closely with subject matter experts to ensure content accuracy. Developed engaging learning experiences that improved knowledge retention and completion rates."
     },
     {
-      title: "Multi-Client Platform Solutions",
-      description: "Managed complex projects for Fortune 500 companies including process optimization and quality assurance",
+      title: "Corporate Training Solutions",
+      description: "Managed e-learning projects for Fortune 500 companies focusing on process optimization and content quality",
       image: "https://images.unsplash.com/photo-1553484771-371a605b060b?w=400&h=300&fit=crop",
-      technologies: ["JIRA", "Process Optimization", "Quality Assurance", "Cross-functional Leadership"],
-      clients: "Coca-Cola, Mondelez, Abbott, Merck",
-      experience: "Orchestrated simultaneous projects for 4 Fortune 500 companies, managing budgets exceeding $2M. Implemented process improvements that reduced operational costs by 25%. Led quality assurance initiatives that achieved 99.5% accuracy rates across all deliverables."
+      technologies: ["JIRA", "Content Management", "Quality Assurance", "Project Coordination"],
+      clients: "Coca-Cola, Mondelez, Abbott",
+      experience: "Coordinated e-learning content development for multiple Fortune 500 clients. Managed project timelines, resource allocation, and quality assurance processes. Maintained strong client relationships and ensured project deliverables met requirements."
     },
     {
-      title: "Cengage Learning Content Management",
-      description: "Led content authoring and platform configuration projects for educational technology solutions",
+      title: "Cengage Learning Platform",
+      description: "Led content authoring and CMS configuration for educational technology solutions",
       image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=400&h=300&fit=crop",
       technologies: ["CMS", "Content Strategy", "Platform Configuration", "Educational Technology"],
       clients: "Cengage SAM, Walch, VHL",
-      experience: "Spearheaded content migration for 500+ educational resources. Developed standardized workflows that improved content quality and reduced production time by 40%. Managed relationships with 15+ educational publishers and maintained 98% client retention rate."
+      experience: "Managed content migration and platform configuration for educational publishers. Developed content workflows and quality standards. Coordinated with multiple stakeholders to ensure successful platform launches and content delivery."
     },
     {
-      title: "Microsoft Office Simulation Suite",
-      description: "Developed comprehensive simulations for Microsoft Office tools using XML coding and best practices",
+      title: "Microsoft Office Simulations",
+      description: "Developed comprehensive simulations for Microsoft Office applications using XML and best practices",
       image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=400&h=300&fit=crop",
-      technologies: ["XML", "Microsoft Office", "Simulation Development", "Code Review"],
-      clients: "Corporate Training Sector",
-      experience: "Created 100+ realistic simulations covering all Microsoft Office applications. Established code review processes that reduced bugs by 60%. The simulation suite was adopted by 20+ corporate training programs and achieved 95% user satisfaction ratings."
+      technologies: ["XML", "Microsoft Office", "Simulation Development", "Code Review", "Quality Testing"],
+      clients: "Corporate Training Programs",
+      experience: "Created realistic simulations for Microsoft Office training programs. Implemented code review processes and quality testing procedures. Developed training materials that were adopted by multiple corporate training initiatives."
     }
   ];
 
   return (
-    <section id="projects" className="py-20 relative">
-      {/* Nature Mountain Background */}
+    <section id="projects" className="py-12 relative">
+      {/* New Blue Desk Background */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: `url("/lovable-uploads/bb1677dc-a840-43aa-8b3a-98106fb3d1ed.png")`
+          backgroundImage: `url("/lovable-uploads/0eeea2b7-5896-40bb-9e33-3c6569181a30.png")`
         }}
       />
       <div className="absolute inset-0 bg-black/40 backdrop-blur-[2px]"></div>
@@ -80,12 +89,12 @@ export const Projects = () => {
       
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="bg-white/10 backdrop-blur-md rounded-3xl p-8 shadow-xl border border-white/20">
-          <div className="text-center mb-20">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-8 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-6 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">
               Featured Projects
             </h2>
             <p className="text-lg text-white/90">
-              Key projects delivered for Fortune 500 companies and enterprise clients
+              Key e-learning and content development projects delivered for enterprise clients
             </p>
           </div>
 
@@ -110,18 +119,44 @@ export const Projects = () => {
                       </CardHeader>
                       <CardContent className="pt-0 pb-4 space-y-3 mt-auto">
                         <div className="flex flex-wrap gap-2">
-                          {project.technologies.slice(0, 2).map((tech, techIndex) => (
-                            <span 
-                              key={techIndex}
-                              className="px-2 py-1 bg-indigo-500/20 text-indigo-200 text-xs rounded backdrop-blur-sm"
+                          {expandedSkills.includes(index) ? (
+                            // Show all skills
+                            project.technologies.map((tech, techIndex) => (
+                              <span 
+                                key={techIndex}
+                                className="px-2 py-1 bg-indigo-500/20 text-indigo-200 text-xs rounded backdrop-blur-sm"
+                              >
+                                {tech}
+                              </span>
+                            ))
+                          ) : (
+                            // Show only first 2 skills
+                            <>
+                              {project.technologies.slice(0, 2).map((tech, techIndex) => (
+                                <span 
+                                  key={techIndex}
+                                  className="px-2 py-1 bg-indigo-500/20 text-indigo-200 text-xs rounded backdrop-blur-sm"
+                                >
+                                  {tech}
+                                </span>
+                              ))}
+                              {project.technologies.length > 2 && (
+                                <button
+                                  onClick={() => toggleSkills(index)}
+                                  className="px-2 py-1 bg-gray-500/20 text-gray-200 text-xs rounded backdrop-blur-sm hover:bg-gray-500/30 transition-colors"
+                                >
+                                  +{project.technologies.length - 2} more
+                                </button>
+                              )}
+                            </>
+                          )}
+                          {expandedSkills.includes(index) && project.technologies.length > 2 && (
+                            <button
+                              onClick={() => toggleSkills(index)}
+                              className="px-2 py-1 bg-gray-500/20 text-gray-200 text-xs rounded backdrop-blur-sm hover:bg-gray-500/30 transition-colors"
                             >
-                              {tech}
-                            </span>
-                          ))}
-                          {project.technologies.length > 2 && (
-                            <span className="px-2 py-1 bg-gray-500/20 text-gray-200 text-xs rounded backdrop-blur-sm">
-                              +{project.technologies.length - 2} more
-                            </span>
+                              Show less
+                            </button>
                           )}
                         </div>
                         <Button 
