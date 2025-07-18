@@ -2,10 +2,12 @@
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
+import { CVDownloadDialog } from "@/components/CVDownloadDialog";
 
 export const Hero = () => {
   const [showScrollButton, setShowScrollButton] = useState(true);
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const [showDownloadDialog, setShowDownloadDialog] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -69,16 +71,7 @@ export const Hero = () => {
   };
 
   const downloadCV = () => {
-    // Create a direct link to open the PDF in a new tab
-    window.open('/Ankita Parit_CV.pdf', '_blank');
-    
-    const toast = document.createElement('div');
-    toast.textContent = 'CV opened in new tab - You can save it from there';
-    toast.style.cssText = 'position: fixed; top: 20px; right: 20px; background: #3B4B8D; color: white; padding: 12px 24px; border-radius: 8px; z-index: 9999; font-size: 14px;';
-    document.body.appendChild(toast);
-    setTimeout(() => {
-      document.body.removeChild(toast);
-    }, 3000);
+    setShowDownloadDialog(true);
   };
 
   const openLinkedIn = () => {
@@ -167,6 +160,12 @@ export const Hero = () => {
           </button>
         </div>
       )}
+
+      {/* CV Download Dialog */}
+      <CVDownloadDialog 
+        isOpen={showDownloadDialog} 
+        onClose={() => setShowDownloadDialog(false)} 
+      />
     </section>
   );
 };
