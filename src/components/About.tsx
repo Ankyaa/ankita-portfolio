@@ -38,17 +38,21 @@ export const About = () => {
           <div className="text-center mb-6 sm:mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">About Me</h2>
             <p className="text-base sm:text-lg text-white/90 max-w-2xl mx-auto px-2">
-              Senior Project Specialist & Data Analytics Expert
+              Senior Project Specialist & Data visualization and analysis Expert
             </p>
             <p className="text-sm sm:text-base text-yellow-300 font-medium mt-2">
-              🤖 Passionate about AI & Machine Learning
+              🚀 Passionate about Project management, Stakeholder Management & Process Excellence
             </p>
           </div>
 
           <div className="mb-8 sm:mb-12">
             <div className="text-center mb-4 sm:mb-6">
-              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-indigo-400/20 via-purple-400/20 to-blue-400/20 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl mx-auto mb-4 sm:mb-6 border border-indigo-400/30 relative group cursor-pointer">
-                <span className="text-3xl sm:text-5xl">👩‍💼</span>
+              <div className="w-24 h-24 sm:w-32 sm:h-32 bg-gradient-to-br from-indigo-400/20 via-purple-400/20 to-blue-400/20 backdrop-blur-sm rounded-full overflow-hidden shadow-xl mx-auto mb-4 sm:mb-6 border border-indigo-400/30 relative group cursor-pointer">
+                <img 
+                  src="/lovable-uploads/c057e5cc-9499-43d9-ac57-b6bbdeef789a.png" 
+                  alt="Ankita Profile" 
+                  className="w-full h-full object-cover"
+                />
                 {/* Hover tooltip */}
                 <div className="absolute -top-12 left-1/2 transform -translate-x-1/2 bg-indigo-600 text-white px-3 py-1 rounded-lg text-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                   Hey, hi I'm Ankita! 👋
@@ -62,7 +66,7 @@ export const About = () => {
                 Accomplished project management professional with 7+ years of experience delivering complex projects from inception to closure. Expert in data visualization, stakeholder engagement, and driving operational efficiency across diverse industries.
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed">
-                My expertise spans across project management, data visualization, and stakeholder engagement. I've 
+                My expertise spans across project management, data visualization, and stakeholder engagement and creating interactive educational and business strategic solutions for global clients. I've 
                 successfully managed projects for key clients including Salesforce, Coca-Cola, 
                 Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
                 with organizational objectives.
