@@ -70,7 +70,7 @@ export const Hero = () => {
 
   const downloadCV = () => {
     // Create a direct link to open the PDF in a new tab
-    window.open('/lovable-uploads/5c32b318-bf52-489c-881c-9806a9a4853f.png', '_blank');
+    window.open('/Ankita Parit_CV.pdf', '_blank');
     
     const toast = document.createElement('div');
     toast.textContent = 'CV opened in new tab - You can save it from there';
