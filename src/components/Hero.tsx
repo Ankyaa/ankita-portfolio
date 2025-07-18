@@ -112,7 +112,7 @@ export const Hero = () => {
           {/* Profile Photo */}
           <div className="mb-8 flex justify-center my-[10px]">
             <div className="w-48 h-48 rounded-full overflow-hidden border-4 border-white/30 shadow-2xl backdrop-blur-sm bg-white/10">
-              <img src="/lovable-uploads/0f7a555b-f3bc-4d06-9ff7-997e4f06792a.png" alt="Ankita Parit" className="w-full h-full object-cover" />
+              <img src="/lovable-uploads/c057e5cc-9499-43d9-ac57-b6bbdeef789a.png" alt="Ankita Parit" className="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -121,15 +121,15 @@ export const Hero = () => {
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">Ankita Parit</span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/90 mb-4">
-            Senior Project Specialist & E-Learning Expert
+            Senior Project Specialist & Data visualization and analysis Expert
           </p>
           <p className="text-lg text-white/80 font-medium mb-8 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
-            📚 Passionate about Educational Technology & Data Visualization
+            🚀 Passionate about Project management, Stakeholder Management & Process Excellence
           </p>
           <p className="text-lg text-white/80 mb-8 max-w-2xl mx-auto">
             Accomplished project management professional with 7+ years of experience delivering 
-            complex e-learning projects from inception to closure. Expert in content development, 
-            stakeholder engagement, and creating interactive educational solutions.
+            complex projects from inception to closure. Expert in data visualization, 
+            stakeholder engagement, and creating interactive educational and business strategic solutions for global clients.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">

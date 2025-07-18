@@ -66,7 +66,7 @@ export const About = () => {
                 Accomplished project management professional with 7+ years of experience delivering complex projects from inception to closure. Expert in data visualization, stakeholder engagement, and driving operational efficiency across diverse industries.
               </p>
               <p className="text-sm sm:text-base lg:text-lg text-white/90 leading-relaxed">
-                My expertise spans across project management, data visualization, and stakeholder engagement and creating interactive educational and business strategic solutions for global clients. I've 
+                My expertise spans across project management, data visualization, and stakeholder engagement and creating interactive educational and business strategic solutions for global clients. I've
                 successfully managed projects for key clients including Salesforce, Coca-Cola, 
                 Mondelez, Accenture, Abbott, and many others, consistently delivering results that align 
                 with organizational objectives.
