@@ -60,7 +60,7 @@ export const CVDownloadDialog = ({ isOpen, onClose }: CVDownloadDialogProps) => 
 
       // Trigger the actual download
       const link = document.createElement('a');
-      link.href = '/Ankita Parit_CV.pdf';
+      link.href = '/ankita-parit-cv.pdf';
       link.download = 'Ankita_Parit_CV.pdf';
       document.body.appendChild(link);
       link.click();
