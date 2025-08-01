@@ -1,37 +1,31 @@
-
 import { Button } from "@/components/ui/button";
 import { Github, Linkedin, Mail, ChevronDown, ChevronUp } from "lucide-react";
 import { useEffect, useState } from "react";
 import { CVDownloadDialog } from "@/components/CVDownloadDialog";
-
 export const Hero = () => {
   const [showScrollButton, setShowScrollButton] = useState(true);
   const [isAtBottom, setIsAtBottom] = useState(false);
   const [showDownloadDialog, setShowDownloadDialog] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       const contactSection = document.querySelector('#contact');
       const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
-      
+
       // Check if at bottom of page
       const atBottom = scrollTop + windowHeight >= documentHeight - 100;
       setIsAtBottom(atBottom);
-      
       if (contactSection) {
         const rect = contactSection.getBoundingClientRect();
         const isContactVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
         setShowScrollButton(!isContactVisible);
       }
     };
-
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
   const scrollToNext = () => {
     if (isAtBottom) {
       // Scroll to top
@@ -50,10 +44,8 @@ export const Hero = () => {
         }
         return false;
       });
-      
       const currentIndex = sections.indexOf(currentSection || 'home');
       const nextIndex = currentIndex + 1;
-      
       if (nextIndex < sections.length) {
         const nextSection = document.querySelector(`#${sections[nextIndex]}`);
         nextSection?.scrollIntoView({
@@ -62,40 +54,30 @@ export const Hero = () => {
       }
     }
   };
-
   const scrollToProjects = () => {
     const projectsSection = document.querySelector('#projects');
     projectsSection?.scrollIntoView({
       behavior: "smooth"
     });
   };
-
   const downloadCV = () => {
     setShowDownloadDialog(true);
   };
-
   const openLinkedIn = () => {
     window.open('https://www.linkedin.com/in/ankita-parit-984130157/', '_blank');
   };
-
   const openGitHub = () => {
     window.open('https://github.com/Ankyaa?tab=projects', '_blank');
   };
-
   const openEmail = () => {
     window.location.href = 'mailto:ankita.parit6@gmail.com';
   };
-
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
+  return <section id="home" className="min-h-screen flex items-center justify-center pt-16 relative overflow-hidden">
       {/* New Blue Desk Background */}
       <div className="absolute inset-0">
-        <div 
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat" 
-          style={{
-            backgroundImage: `url("/lovable-uploads/0eeea2b7-5896-40bb-9e33-3c6569181a30.png")`
-          }}
-        />
+        <div className="absolute inset-0 bg-cover bg-center bg-no-repeat" style={{
+        backgroundImage: `url("/lovable-uploads/0eeea2b7-5896-40bb-9e33-3c6569181a30.png")`
+      }} />
         <div className="absolute inset-0 bg-black/40 backdrop-blur-[1px]"></div>
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-900/30 via-purple-900/20 to-blue-900/30"></div>
       </div>
@@ -113,9 +95,7 @@ export const Hero = () => {
             Hi, I'm{" "}
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">Ankita Parit</span>
           </h1>
-          <p className="text-xl sm:text-2xl text-white/90 mb-4">
-            Senior project specialist & data visualization and analysis expert
-          </p>
+          <p className="text-xl sm:text-2xl text-white/90 mb-4">Senior Project Specialist &amp; Data Visualization and Analysis Expert</p>
           <p className="text-lg text-white/80 font-medium mb-8 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
             🚀 Passionate about Project management, Stakeholder Management & Process Excellence
           </p>
@@ -149,23 +129,14 @@ export const Hero = () => {
       </div>
 
       {/* Smart Scroll Button */}
-      {showScrollButton && (
-        <div className="fixed bottom-6 right-6 z-50">
-          <button 
-            onClick={scrollToNext} 
-            className="flex flex-col items-center text-white/80 hover:text-white transition-colors bg-black/30 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg hover:bg-black/40 animate-bounce border border-white/20"
-          >
+      {showScrollButton && <div className="fixed bottom-6 right-6 z-50">
+          <button onClick={scrollToNext} className="flex flex-col items-center text-white/80 hover:text-white transition-colors bg-black/30 backdrop-blur-sm rounded-full px-3 py-2 shadow-lg hover:bg-black/40 animate-bounce border border-white/20">
             <span className="text-xs mb-1">Scroll</span>
             {isAtBottom ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
           </button>
-        </div>
-      )}
+        </div>}
 
       {/* CV Download Dialog */}
-      <CVDownloadDialog 
-        isOpen={showDownloadDialog} 
-        onClose={() => setShowDownloadDialog(false)} 
-      />
-    </section>
-  );
+      <CVDownloadDialog isOpen={showDownloadDialog} onClose={() => setShowDownloadDialog(false)} />
+    </section>;
 };
