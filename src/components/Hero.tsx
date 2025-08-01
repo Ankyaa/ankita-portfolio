@@ -114,7 +114,7 @@ export const Hero = () => {
             <span className="bg-gradient-to-r from-indigo-400 via-purple-400 to-blue-400 bg-clip-text text-transparent">Ankita Parit</span>
           </h1>
           <p className="text-xl sm:text-2xl text-white/90 mb-4">
-            Senior Project Specialist & Data visualization and analysis Expert
+            Senior project specialist & data visualization and analysis expert
           </p>
           <p className="text-lg text-white/80 font-medium mb-8 bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">
             🚀 Passionate about Project management, Stakeholder Management & Process Excellence
